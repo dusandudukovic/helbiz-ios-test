@@ -142,7 +142,7 @@
 				04C72914280ED4B700AE15F9 /* Data */,
 				04C728E5280ED4B600AE15F9 /* Domain */,
 				04C72901280ED4B700AE15F9 /* View */,
-				04C728EC280ED4B600AE15F9 /* Extensions */,
+				04C72961280EEC9D00AE15F9 /* Helpers */,
 				04C728DA280ED41600AE15F9 /* Assets.xcassets */,
 				04C728DF280ED41600AE15F9 /* Info.plist */,
 			);
@@ -306,6 +306,14 @@
 				04C7295D280EDC1700AE15F9 /* ModalNavigationController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		04C72961280EEC9D00AE15F9 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				04C728EC280ED4B600AE15F9 /* Extensions */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
