@@ -54,6 +54,10 @@
 		04C72955280ED5BE00AE15F9 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 04C72954280ED5BE00AE15F9 /* Alamofire */; };
 		04C72958280ED62100AE15F9 /* AlamofireNetworkActivityLogger in Frameworks */ = {isa = PBXBuildFile; productRef = 04C72957280ED62100AE15F9 /* AlamofireNetworkActivityLogger */; };
 		04C7295E280EDC1700AE15F9 /* ModalNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C7295D280EDC1700AE15F9 /* ModalNavigationController.swift */; };
+		04C72964280F52D900AE15F9 /* GetLocationUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C72963280F52D900AE15F9 /* GetLocationUseCase.swift */; };
+		04C72966280F531100AE15F9 /* LocalHighlightsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C72965280F531100AE15F9 /* LocalHighlightsService.swift */; };
+		04C72968280F5E8700AE15F9 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C72967280F5E8700AE15F9 /* LocationService.swift */; };
+		04C7296A280F61C300AE15F9 /* GetPOIsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C72969280F61C300AE15F9 /* GetPOIsUseCase.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -104,6 +108,10 @@
 		04C7291F280ED4B700AE15F9 /* TokenManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TokenManager.swift; sourceTree = "<group>"; };
 		04C72922280ED4B700AE15F9 /* NetworkService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		04C7295D280EDC1700AE15F9 /* ModalNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalNavigationController.swift; sourceTree = "<group>"; };
+		04C72963280F52D900AE15F9 /* GetLocationUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetLocationUseCase.swift; sourceTree = "<group>"; };
+		04C72965280F531100AE15F9 /* LocalHighlightsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalHighlightsService.swift; sourceTree = "<group>"; };
+		04C72967280F5E8700AE15F9 /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
+		04C72969280F61C300AE15F9 /* GetPOIsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPOIsUseCase.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,7 +160,9 @@
 		04C728E5280ED4B600AE15F9 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
-				04C728E7280ED4B600AE15F9 /* UseCase.swift */,
+				04C7296B280F620C00AE15F9 /* Base */,
+				04C72963280F52D900AE15F9 /* GetLocationUseCase.swift */,
+				04C72969280F61C300AE15F9 /* GetPOIsUseCase.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -287,6 +297,8 @@
 			isa = PBXGroup;
 			children = (
 				04C72922280ED4B700AE15F9 /* NetworkService.swift */,
+				04C72965280F531100AE15F9 /* LocalHighlightsService.swift */,
+				04C72967280F5E8700AE15F9 /* LocationService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -314,6 +326,14 @@
 				04C728EC280ED4B600AE15F9 /* Extensions */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		04C7296B280F620C00AE15F9 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				04C728E7280ED4B600AE15F9 /* UseCase.swift */,
+			);
+			path = Base;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -402,9 +422,11 @@
 				04C7294E280ED4B700AE15F9 /* DataRequestHandler.swift in Sources */,
 				04C72928280ED4B700AE15F9 /* AppSession.swift in Sources */,
 				04C72930280ED4B700AE15F9 /* UIView+Extension.swift in Sources */,
+				04C72968280F5E8700AE15F9 /* LocationService.swift in Sources */,
 				04C72946280ED4B700AE15F9 /* BaseViewController.swift in Sources */,
 				04C7292C280ED4B700AE15F9 /* UIColor+Extension.swift in Sources */,
 				04C72939280ED4B700AE15F9 /* UIStackView+Extension.swift in Sources */,
+				04C72966280F531100AE15F9 /* LocalHighlightsService.swift in Sources */,
 				04C72933280ED4B700AE15F9 /* Encodable+Extension.swift in Sources */,
 				04C7295E280EDC1700AE15F9 /* ModalNavigationController.swift in Sources */,
 				04C7293A280ED4B700AE15F9 /* CALayer+Extension.swift in Sources */,
@@ -430,7 +452,9 @@
 				04C7292A280ED4B700AE15F9 /* CLLocationCoordinate2D+Extension.swift in Sources */,
 				04C7293C280ED4B700AE15F9 /* AppDelegate.swift in Sources */,
 				04C7292F280ED4B700AE15F9 /* UIButton+Extension.swift in Sources */,
+				04C7296A280F61C300AE15F9 /* GetPOIsUseCase.swift in Sources */,
 				04C72940280ED4B700AE15F9 /* HomePresenter.swift in Sources */,
+				04C72964280F52D900AE15F9 /* GetLocationUseCase.swift in Sources */,
 				04C72936280ED4B700AE15F9 /* UIViewController+Extension.swift in Sources */,
 				04C72938280ED4B700AE15F9 /* UITableViewCell+Extension.swift in Sources */,
 				04C72932280ED4B700AE15F9 /* UINavigationController+Extension.swift in Sources */,
