@@ -75,6 +75,7 @@ extension DependencyContainer: ViewControllerFactory {
     func homeViewController() -> BaseViewController {
         if let vc = UIStoryboard(name: "Home", bundle: .none).instantiateInitialViewController() as? HomeViewController {
             vc.presenter = homePresenter()
+            vc.style = style
             return vc
         }
         fatalError("Failed to load ViewController from Storyboard")

@@ -11,6 +11,7 @@ class HomeViewController: BaseViewController {
 
     @IBOutlet weak var mapView: MapView!
     
+    var style: Style?
     var presenter: HomePresenter?
     
     override func viewDidLoad() {
