@@ -44,7 +44,10 @@ class LocationService: NSObject {
         }
     }
     
-    func isTrackingAllowed() -> Bool {
+    func isTrackingAllowed() -> Bool? {
+        if locationManager?.authorizationStatus == .notDetermined {
+            return nil
+        }
         return locationManager?.authorizationStatus == .authorizedWhenInUse
     }
     
@@ -56,7 +59,7 @@ extension LocationService: CLLocationManagerDelegate {
         if status == .authorizedAlways || status == .authorizedWhenInUse {
             locationManager?.startUpdatingLocation()
             onAuthorizationGranted?(true)
-        } else {
+        } else if status == .denied {
             onAuthorizationGranted?(false)
         }
     }

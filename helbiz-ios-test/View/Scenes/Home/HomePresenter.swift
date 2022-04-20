@@ -10,7 +10,7 @@ import Foundation
 class HomePresenter: Presenter {
     var showAlert: ((String) -> ())?
     var showError: ((String) -> ())?
-    var authorizationIsDenied: (() -> ())?
+    var authorizationGranted: ((Bool) -> ())?
     
     private var locationService: LocationService
     private var getPOIsUseCase: GetPOIsUseCase
@@ -35,8 +35,10 @@ class HomePresenter: Presenter {
     func startTracking() {
         locationService.startService()
         
-        if !locationService.isTrackingAllowed() {
-            authorizationIsDenied?()
+        if let isTrackingAllowed = locationService.isTrackingAllowed() {
+            if !isTrackingAllowed {
+                authorizationGranted?(false)
+            }
         }
         
         getPOIArray()
@@ -83,8 +85,8 @@ class HomePresenter: Presenter {
     
     // MARK: - User actions
     
-    private func tagTapped() {
-        // selectedTag = ...
+    private func tagTapped(at index: Int) {
+        //
     }
 
     // MARK: - Setup
@@ -92,9 +94,7 @@ class HomePresenter: Presenter {
     private func setup() {
         locationService.onAuthorizationGranted = { [weak self] bool in
             self?.trackingAuthorized = bool
-            if !bool {
-                self?.authorizationIsDenied?()
-            }
+            self?.authorizationGranted?(bool)
         }
         locationService.onLocationDidUpdate = { [weak self] coordinates in
             guard let `self` = self else { return }

@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -14,13 +15,33 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4K3-ZO-0DM" customClass="MapView" customModule="helbiz_ios_test" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="448"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="4K3-ZO-0DM" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Ut0-IR-Oxe"/>
+                            <constraint firstAttribute="centerY" secondItem="4K3-ZO-0DM" secondAttribute="bottom" id="dIp-9C-4Y6"/>
+                            <constraint firstItem="4K3-ZO-0DM" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="pn5-9U-3AD"/>
+                            <constraint firstItem="4K3-ZO-0DM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="sIO-nC-7NS"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="mapView" destination="4K3-ZO-0DM" id="qET-7e-nUN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="62" y="65"/>
+            <point key="canvasLocation" x="60.869565217391312" y="64.955357142857139"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

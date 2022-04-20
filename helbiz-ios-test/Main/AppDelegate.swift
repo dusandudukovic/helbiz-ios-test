@@ -7,6 +7,7 @@
 
 import UIKit
 import AlamofireNetworkActivityLogger
+import GoogleMaps
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -21,6 +22,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         container = DependencyContainer()
         
+        // MARK: - Libs setup
+        
+        GMSServices.provideAPIKey("AIzaSyDFEc-m8WH73sPHst1aCVfcNLENNmgyc14")
         NetworkActivityLogger.shared.level = .debug
         NetworkActivityLogger.shared.startLogging()
         

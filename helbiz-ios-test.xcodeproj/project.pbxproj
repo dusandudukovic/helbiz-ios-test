@@ -65,6 +65,8 @@
 		04C7297728102EC400AE15F9 /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C7297628102EC400AE15F9 /* Tag.swift */; };
 		04C7297928102F5C00AE15F9 /* GetTagsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C7297828102F5C00AE15F9 /* GetTagsUseCase.swift */; };
 		04C7297C28103C1500AE15F9 /* CLLocation+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C7297B28103C1500AE15F9 /* CLLocation+Extension.swift */; };
+		04C7297E2810960E00AE15F9 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C7297D2810960E00AE15F9 /* MapView.swift */; };
+		04C729812810967000AE15F9 /* MapView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04C729802810967000AE15F9 /* MapView.xib */; };
 		CE35EB245DE8B024945E5A70 /* Pods_helbiz_ios_test.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A204B392323AAFE59F900B4 /* Pods_helbiz_ios_test.framework */; };
 /* End PBXBuildFile section */
 
@@ -127,6 +129,8 @@
 		04C7297628102EC400AE15F9 /* Tag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tag.swift; sourceTree = "<group>"; };
 		04C7297828102F5C00AE15F9 /* GetTagsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetTagsUseCase.swift; sourceTree = "<group>"; };
 		04C7297B28103C1500AE15F9 /* CLLocation+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CLLocation+Extension.swift"; sourceTree = "<group>"; };
+		04C7297D2810960E00AE15F9 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		04C729802810967000AE15F9 /* MapView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MapView.xib; sourceTree = "<group>"; };
 		1E81939904E47138FC8989F1 /* Pods-helbiz-ios-test.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-helbiz-ios-test.debug.xcconfig"; path = "Target Support Files/Pods-helbiz-ios-test/Pods-helbiz-ios-test.debug.xcconfig"; sourceTree = "<group>"; };
 		1F58BBF9C7839D359A32F13F /* Pods-helbiz-ios-test.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-helbiz-ios-test.release.xcconfig"; path = "Target Support Files/Pods-helbiz-ios-test/Pods-helbiz-ios-test.release.xcconfig"; sourceTree = "<group>"; };
 		6A204B392323AAFE59F900B4 /* Pods_helbiz_ios_test.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_helbiz_ios_test.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -252,6 +256,8 @@
 				04C728D7280ED41100AE15F9 /* Home.storyboard */,
 				04C72906280ED4B700AE15F9 /* HomeViewController.swift */,
 				04C72907280ED4B700AE15F9 /* HomePresenter.swift */,
+				04C7297F2810961300AE15F9 /* Views */,
+				04C7298228109E0F00AE15F9 /* ViewModels */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -372,13 +378,28 @@
 			path = Tracking;
 			sourceTree = "<group>";
 		};
+		04C7297F2810961300AE15F9 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				04C729802810967000AE15F9 /* MapView.xib */,
+				04C7297D2810960E00AE15F9 /* MapView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		04C7298228109E0F00AE15F9 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 		8386619D0825579216E6FDC8 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
 				1E81939904E47138FC8989F1 /* Pods-helbiz-ios-test.debug.xcconfig */,
 				1F58BBF9C7839D359A32F13F /* Pods-helbiz-ios-test.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -459,6 +480,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				04C728DE280ED41600AE15F9 /* LaunchScreen.storyboard in Resources */,
+				04C729812810967000AE15F9 /* MapView.xib in Resources */,
 				04C728DB280ED41600AE15F9 /* Assets.xcassets in Resources */,
 				04C728D9280ED41100AE15F9 /* Home.storyboard in Resources */,
 			);
@@ -520,6 +542,7 @@
 				04C7294B280ED4B700AE15F9 /* RequestEndpoint.swift in Sources */,
 				04C7294E280ED4B700AE15F9 /* DataRequestHandler.swift in Sources */,
 				04C7296D28101D2800AE15F9 /* Coordinates.swift in Sources */,
+				04C7297E2810960E00AE15F9 /* MapView.swift in Sources */,
 				04C7297528102CDF00AE15F9 /* TagService.swift in Sources */,
 				04C72928280ED4B700AE15F9 /* AppSession.swift in Sources */,
 				04C7297128101F0700AE15F9 /* Image.swift in Sources */,
