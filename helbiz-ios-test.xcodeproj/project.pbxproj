@@ -260,7 +260,7 @@
 		04C72914280ED4B700AE15F9 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				04C72967280F5E8700AE15F9 /* LocationService.swift */,
+				04C7297A281030FD00AE15F9 /* Tracking */,
 				04C72915280ED4B700AE15F9 /* Networking */,
 				04C72923280ED4B700AE15F9 /* Model */,
 			);
@@ -352,6 +352,14 @@
 				04C728E7280ED4B600AE15F9 /* UseCase.swift */,
 			);
 			path = Base;
+			sourceTree = "<group>";
+		};
+		04C7297A281030FD00AE15F9 /* Tracking */ = {
+			isa = PBXGroup;
+			children = (
+				04C72967280F5E8700AE15F9 /* LocationService.swift */,
+			);
+			path = Tracking;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
