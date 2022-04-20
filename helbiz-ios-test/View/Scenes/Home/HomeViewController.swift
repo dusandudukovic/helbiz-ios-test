@@ -13,12 +13,21 @@ class HomeViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        setup()
+        
+        presenter?.startTracking()
     }
 
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
+    func setup() {
+        presenter?.authorizationIsDenied = { [weak self] in
+            guard let `self` = self else { return }
+            self.showAlert(title: "Tracking not allowed",
+                           message: "Please allow tracking features in settings",
+                           buttonTitle: "Go to Settings", showCancel: true) { action in
+                UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!)
+            }
+        }
     }
     
 }

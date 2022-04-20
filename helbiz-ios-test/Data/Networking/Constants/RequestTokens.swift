@@ -9,8 +9,8 @@ import Foundation
 
 struct RequestTokens {
 
-    // these tokens are used only for public API endpoints
-    let basicToken = ""
-    let mobToken = ""
+    // Triposo API
+    let triposoAccount = "YDIYVMO2"
+    let triposoToken = "7982cexehuvb40itknddvk3et5rlu2lx"
     
 }

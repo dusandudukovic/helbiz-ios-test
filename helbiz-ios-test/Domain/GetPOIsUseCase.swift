@@ -10,19 +10,20 @@ import Foundation
 class GetPOIsUseCase: UseCase {
     typealias SuccessData = [Poi]
     typealias FailureData = String?
+    typealias Result = UseCaseResult<SuccessData, FailureData>
     
     private var service: LocalHighlightsService
     
-    var coordinate: Coordinates?
+    var coordinates: Coordinates?
     var tag: String?
     
     init(service: LocalHighlightsService) {
         self.service = service
     }
     
-    func execute(completion: ((UseCaseResult<SuccessData, FailureData>) -> Void)?) {
-        if let coordinate = coordinate {
-            service.getPOIs(coordinate: coordinate, tag: tag) { result in
+    func execute(completion: ((Result) -> Void)?) {
+        if let coordinates = coordinates {
+            service.getPOIs(coordinates: coordinates, tag: tag) { result in
                 switch result {
                 case .success(let response):
                     if let localHighlights = try? JSONDecoder().decode(LocalHighlights.self, from: response.data) {

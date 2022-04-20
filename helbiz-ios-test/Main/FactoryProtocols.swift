@@ -30,13 +30,15 @@ protocol PresenterFactory {
 // MARK: - UseCases
 
 protocol UseCaseFactory {
-
+    func getPOIsUseCase() -> GetPOIsUseCase
+    func getTagsUseCase() -> GetTagsUseCase
 }
 
 // MARK: - NetworkServices
 
 protocol NetworkServiceFactory {
-
+    func localHighlightsService() -> LocalHighlightsService
+    func tagService() -> TagService
 }
 
 // MARK: - Services

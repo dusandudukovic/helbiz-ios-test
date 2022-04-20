@@ -21,11 +21,11 @@ class LocalHighlightsService: NetworkService {
         self.responseHandler = dataHandler
     }
     
-    func getPOIs(coordinate: Coordinates, tag: String? = "cuisine", completion: RequestCompletion?) {
+    func getPOIs(coordinates: Coordinates, tag: String? = "cuisine", completion: RequestCompletion?) {
         let url = RequestEndpoint.localHighlights
         let params: [String : Any] = [
-            "latitude": coordinate.latitude,
-            "longitude": coordinate.longitude,
+            "latitude": coordinates.latitude,
+            "longitude": coordinates.longitude,
             "tag_labels": tag ?? "cuisine",
             "max_distance": maxDistanceInMeters,
             "poi_fields": "id,location_id,name,coordinates,snippet,score,intro,images"

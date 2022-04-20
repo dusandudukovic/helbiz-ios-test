@@ -10,8 +10,9 @@ import CoreLocation
 
 class LocationService: NSObject {
     
-    var onLocationDidUpdate: ((CLLocation) -> ())?
+    var onLocationDidUpdate: ((Coordinates) -> ())?
     var onDidReadFirstLocation: (() -> ())?
+    var onAuthorizationGranted: ((Bool) -> ())?
     
     private var locationManager: CLLocationManager?
     private var didReadFirstLocation = false
@@ -33,7 +34,7 @@ class LocationService: NSObject {
         locationManager.delegate = self
     }
     
-    func requestAuthorization() {
+    func startService() {
         let status = locationManager?.authorizationStatus
 
         if status == .notDetermined {
@@ -43,6 +44,10 @@ class LocationService: NSObject {
         }
     }
     
+    func isTrackingAllowed() -> Bool {
+        return locationManager?.authorizationStatus == .authorizedWhenInUse
+    }
+    
 }
 
 extension LocationService: CLLocationManagerDelegate {
@@ -50,13 +55,16 @@ extension LocationService: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         if status == .authorizedAlways || status == .authorizedWhenInUse {
             locationManager?.startUpdatingLocation()
+            onAuthorizationGranted?(true)
+        } else {
+            onAuthorizationGranted?(false)
         }
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let location = locations.last {
             lastKnownLocation = location
-            onLocationDidUpdate?(location)
+            onLocationDidUpdate?(location.asCoordinates())
             
             if !didReadFirstLocation {
                 didReadFirstLocation = true
@@ -67,7 +75,7 @@ extension LocationService: CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         debugPrint("TrackingManager - didFailWithError: \(error.localizedDescription)")
-        requestAuthorization()
+        startService()
     }
     
 }

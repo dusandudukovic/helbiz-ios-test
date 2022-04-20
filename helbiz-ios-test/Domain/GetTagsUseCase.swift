@@ -10,6 +10,7 @@ import Foundation
 class GetTagsUseCase: UseCase {
     typealias SuccessData = [Tag]
     typealias FailureData = String?
+    typealias Result = UseCaseResult<SuccessData, FailureData>
     
     private var service: TagService
     
@@ -19,7 +20,7 @@ class GetTagsUseCase: UseCase {
         self.service = service
     }
     
-    func execute(completion: ((UseCaseResult<SuccessData, FailureData>) -> Void)?) {
+    func execute(completion: ((Result) -> Void)?) {
         if let locationId = locationId {
             service.getTags(locationId: locationId) { result in
                 switch result {

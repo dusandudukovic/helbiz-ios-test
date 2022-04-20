@@ -64,6 +64,7 @@
 		04C7297528102CDF00AE15F9 /* TagService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C7297428102CDF00AE15F9 /* TagService.swift */; };
 		04C7297728102EC400AE15F9 /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C7297628102EC400AE15F9 /* Tag.swift */; };
 		04C7297928102F5C00AE15F9 /* GetTagsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C7297828102F5C00AE15F9 /* GetTagsUseCase.swift */; };
+		04C7297C28103C1500AE15F9 /* CLLocation+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C7297B28103C1500AE15F9 /* CLLocation+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -124,6 +125,7 @@
 		04C7297428102CDF00AE15F9 /* TagService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagService.swift; sourceTree = "<group>"; };
 		04C7297628102EC400AE15F9 /* Tag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tag.swift; sourceTree = "<group>"; };
 		04C7297828102F5C00AE15F9 /* GetTagsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetTagsUseCase.swift; sourceTree = "<group>"; };
+		04C7297B28103C1500AE15F9 /* CLLocation+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CLLocation+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -212,6 +214,7 @@
 				04C728FC280ED4B600AE15F9 /* UIStackView+Extension.swift */,
 				04C728FD280ED4B600AE15F9 /* CALayer+Extension.swift */,
 				04C728FE280ED4B600AE15F9 /* Array+Extension.swift */,
+				04C7297B28103C1500AE15F9 /* CLLocation+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -492,6 +495,7 @@
 				04C72932280ED4B700AE15F9 /* UINavigationController+Extension.swift in Sources */,
 				04C72949280ED4B700AE15F9 /* DefaultNetworkConfiguration.swift in Sources */,
 				04C72934280ED4B700AE15F9 /* Bundle+Extension.swift in Sources */,
+				04C7297C28103C1500AE15F9 /* CLLocation+Extension.swift in Sources */,
 				04C72948280ED4B700AE15F9 /* Presenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -642,6 +646,7 @@
 				DEVELOPMENT_TEAM = SGQ52C55M7;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "helbiz-ios-test/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = HIT;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -669,6 +674,7 @@
 				DEVELOPMENT_TEAM = SGQ52C55M7;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "helbiz-ios-test/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = HIT;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";

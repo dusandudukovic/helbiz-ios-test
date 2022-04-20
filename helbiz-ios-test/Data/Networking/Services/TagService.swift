@@ -20,7 +20,7 @@ class TagService: NetworkService {
     }
     
     func getTags(locationId: String, completion: RequestCompletion?) {
-        let url = RequestEndpoint.localHighlights
+        let url = RequestEndpoint.tag
         let params: [String : Any] = [
             "location_id": locationId,
             "ancestor_label": "cuisine",

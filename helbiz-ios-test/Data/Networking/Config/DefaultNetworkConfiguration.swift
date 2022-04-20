@@ -26,13 +26,6 @@ class DefaultNetworkConfiguration: NetworkConfiguration {
         session = Session()
         headers = HTTPHeaders.default
         dataHandler = DefaultDataRequestHandler()
-        
-        NetworkActivityLogger.shared.level = .debug
-        NetworkActivityLogger.shared.startLogging()
-    }
-    
-    deinit {
-        NetworkActivityLogger.shared.stopLogging()
     }
     
 }

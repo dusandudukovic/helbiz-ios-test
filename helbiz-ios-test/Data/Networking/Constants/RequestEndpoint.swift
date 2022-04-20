@@ -17,6 +17,7 @@ struct RequestEndpoint {
     
     // MARK: Specific
     
-    static let localHighlights = "local_highlights.json"
+    static let localHighlights = base + "local_highlights.json"
+    static let tag = base + "tag.json"
     
 }
