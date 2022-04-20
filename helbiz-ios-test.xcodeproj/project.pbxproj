@@ -65,6 +65,7 @@
 		04C7297728102EC400AE15F9 /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C7297628102EC400AE15F9 /* Tag.swift */; };
 		04C7297928102F5C00AE15F9 /* GetTagsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C7297828102F5C00AE15F9 /* GetTagsUseCase.swift */; };
 		04C7297C28103C1500AE15F9 /* CLLocation+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C7297B28103C1500AE15F9 /* CLLocation+Extension.swift */; };
+		CE35EB245DE8B024945E5A70 /* Pods_helbiz_ios_test.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A204B392323AAFE59F900B4 /* Pods_helbiz_ios_test.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -126,6 +127,9 @@
 		04C7297628102EC400AE15F9 /* Tag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tag.swift; sourceTree = "<group>"; };
 		04C7297828102F5C00AE15F9 /* GetTagsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetTagsUseCase.swift; sourceTree = "<group>"; };
 		04C7297B28103C1500AE15F9 /* CLLocation+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CLLocation+Extension.swift"; sourceTree = "<group>"; };
+		1E81939904E47138FC8989F1 /* Pods-helbiz-ios-test.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-helbiz-ios-test.debug.xcconfig"; path = "Target Support Files/Pods-helbiz-ios-test/Pods-helbiz-ios-test.debug.xcconfig"; sourceTree = "<group>"; };
+		1F58BBF9C7839D359A32F13F /* Pods-helbiz-ios-test.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-helbiz-ios-test.release.xcconfig"; path = "Target Support Files/Pods-helbiz-ios-test/Pods-helbiz-ios-test.release.xcconfig"; sourceTree = "<group>"; };
+		6A204B392323AAFE59F900B4 /* Pods_helbiz_ios_test.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_helbiz_ios_test.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +139,7 @@
 			files = (
 				04C72955280ED5BE00AE15F9 /* Alamofire in Frameworks */,
 				04C72958280ED62100AE15F9 /* AlamofireNetworkActivityLogger in Frameworks */,
+				CE35EB245DE8B024945E5A70 /* Pods_helbiz_ios_test.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -146,6 +151,8 @@
 			children = (
 				04C728D0280ED41100AE15F9 /* helbiz-ios-test */,
 				04C728CF280ED41100AE15F9 /* Products */,
+				8386619D0825579216E6FDC8 /* Pods */,
+				BCA1C99475BD90DD8A0AEF3B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -365,6 +372,24 @@
 			path = Tracking;
 			sourceTree = "<group>";
 		};
+		8386619D0825579216E6FDC8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1E81939904E47138FC8989F1 /* Pods-helbiz-ios-test.debug.xcconfig */,
+				1F58BBF9C7839D359A32F13F /* Pods-helbiz-ios-test.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		BCA1C99475BD90DD8A0AEF3B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6A204B392323AAFE59F900B4 /* Pods_helbiz_ios_test.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -372,9 +397,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 04C728E2280ED41600AE15F9 /* Build configuration list for PBXNativeTarget "helbiz-ios-test" */;
 			buildPhases = (
+				F74ED4FD6AA22A4077F50D40 /* [CP] Check Pods Manifest.lock */,
 				04C728CA280ED41100AE15F9 /* Sources */,
 				04C728CB280ED41100AE15F9 /* Frameworks */,
 				04C728CC280ED41100AE15F9 /* Resources */,
+				BFB2561077E451CEF2981587 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -438,6 +465,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		BFB2561077E451CEF2981587 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-helbiz-ios-test/Pods-helbiz-ios-test-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-helbiz-ios-test/Pods-helbiz-ios-test-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-helbiz-ios-test/Pods-helbiz-ios-test-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F74ED4FD6AA22A4077F50D40 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-helbiz-ios-test-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		04C728CA280ED41100AE15F9 /* Sources */ = {
@@ -638,6 +707,7 @@
 		};
 		04C728E3280ED41600AE15F9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1E81939904E47138FC8989F1 /* Pods-helbiz-ios-test.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -666,6 +736,7 @@
 		};
 		04C728E4280ED41600AE15F9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1F58BBF9C7839D359A32F13F /* Pods-helbiz-ios-test.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

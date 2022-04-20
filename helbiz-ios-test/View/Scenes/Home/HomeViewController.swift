@@ -23,7 +23,7 @@ class HomeViewController: BaseViewController {
         presenter?.authorizationIsDenied = { [weak self] in
             guard let `self` = self else { return }
             self.showAlert(title: "Tracking not allowed",
-                           message: "Please allow tracking features in settings",
+                           message: "Please allow sharing device location in Settings to use this app.",
                            buttonTitle: "Go to Settings", showCancel: true) { action in
                 UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!)
             }
