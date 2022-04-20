@@ -743,7 +743,8 @@
 				DEVELOPMENT_TEAM = SGQ52C55M7;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "helbiz-ios-test/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = HIT;
+				INFOPLIST_KEY_CFBundleDisplayName = HiT;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "In order to show you location based info, as well as your own location, please allow sharing device location while using the app.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -772,7 +773,8 @@
 				DEVELOPMENT_TEAM = SGQ52C55M7;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "helbiz-ios-test/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = HIT;
+				INFOPLIST_KEY_CFBundleDisplayName = HiT;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "In order to show you location based info, as well as your own location, please allow sharing device location while using the app.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
