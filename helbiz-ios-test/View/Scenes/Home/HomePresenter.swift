@@ -105,9 +105,6 @@ class HomePresenter: Presenter {
                 }
             }
         }
-//        locationService.onDidReadFirstLocation = { [weak self] in
-//
-//        }
     }
     
 }

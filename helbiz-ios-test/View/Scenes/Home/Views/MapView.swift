@@ -77,6 +77,17 @@ class MapView: ViewWithNib {
     
     private func setup() {
         mapView.isMyLocationEnabled = true
+        
+        do {
+            if let file = Bundle.main.url(forResource: "map_style", withExtension: "json") {
+                mapView.mapStyle = try GMSMapStyle(contentsOfFileURL: file)
+            } else {
+                print("'map_style.json' file not found. Showing map with default styles.")
+            }
+        } catch let error {
+            print("The map style definition could not be loaded: \(error)")
+        }
+        
     }
     
 }

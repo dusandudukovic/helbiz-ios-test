@@ -11,7 +11,6 @@ import CoreLocation
 class LocationService: NSObject {
     
     var onLocationDidUpdate: ((Coordinates) -> ())?
-    var onDidReadFirstLocation: (() -> ())?
     var onAuthorizationGranted: ((Bool) -> ())?
     
     private var locationManager: CLLocationManager?
@@ -68,11 +67,6 @@ extension LocationService: CLLocationManagerDelegate {
         if let location = locations.last {
             lastKnownLocation = location
             onLocationDidUpdate?(location.asCoordinates())
-            
-            if !didReadFirstLocation {
-                didReadFirstLocation = true
-                onDidReadFirstLocation?()
-            }
         }
     }
     
