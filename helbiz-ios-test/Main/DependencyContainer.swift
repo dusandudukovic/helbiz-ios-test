@@ -8,6 +8,7 @@
 import Foundation
 import Alamofire
 import UIKit
+import CoreLocation
 
 class DependencyContainer {
     
@@ -35,21 +36,29 @@ class DependencyContainer {
         return AppSession()
     }()
     
-    private lazy var tokenManager: TokenManager = {
-       return TokenManager(headers: defaultHeaders, appSession: appSession)
-    }()
-    
     lazy var style: Style = {
         return Style()
+    }()
+    
+    lazy var locationManager: CLLocationManager = {
+        let lm = CLLocationManager()
+        lm.pausesLocationUpdatesAutomatically = false
+        lm.activityType = .fitness
+        lm.desiredAccuracy = kCLLocationAccuracyBestForNavigation
+        return lm
+    }()
+    
+    lazy var locationService: LocationService = {
+       return LocationService(appSession: appSession, locationManager: locationManager)
+    }()
+    
+    private lazy var tokenManager: TokenManager = {
+       return TokenManager(headers: defaultHeaders, appSession: appSession)
     }()
     
     private lazy var defaultRequestHandler: DataRequestHandler = {
         return DefaultDataRequestHandler()
     }()
-
-//    func makeValidationService() -> ValidationService {
-//        return ValidationService()
-//    }
     
 }
 

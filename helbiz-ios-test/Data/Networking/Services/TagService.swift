@@ -1,19 +1,17 @@
 //
-//  LocalHighlightsService.swift
+//  TagService.swift
 //  helbiz-ios-test
 //
-//  Created by Dusan on 19.4.22..
+//  Created by Dusan on 20.4.22..
 //
 
 import Foundation
 import Alamofire
 
-class LocalHighlightsService: NetworkService {
+class TagService: NetworkService {
     private var headers: HTTPHeaders
     private let session: Session
     private let responseHandler: DataRequestHandler
-    
-    private let maxDistanceInMeters: Int = 5000
     
     required init(headers: HTTPHeaders, session: Session, dataHandler: DataRequestHandler) {
         self.headers = headers
@@ -21,14 +19,14 @@ class LocalHighlightsService: NetworkService {
         self.responseHandler = dataHandler
     }
     
-    func getPOIs(coordinate: Coordinates, tag: String? = "cuisine", completion: RequestCompletion?) {
+    func getTags(locationId: String, completion: RequestCompletion?) {
         let url = RequestEndpoint.localHighlights
         let params: [String : Any] = [
-            "latitude": coordinate.latitude,
-            "longitude": coordinate.longitude,
-            "tag_labels": tag ?? "cuisine",
-            "max_distance": maxDistanceInMeters,
-            "poi_fields": "id,location_id,name,coordinates,snippet,score,intro,images"
+            "location_id": locationId,
+            "ancestor_label": "cuisine",
+            "order_by": "-poi_count",
+            "fields": "name,poi_count,score,label",
+            "count": 10
         ]
         
         let request = session.request(url, method: .get, parameters: params, headers: headers)
@@ -37,3 +35,4 @@ class LocalHighlightsService: NetworkService {
 
     
 }
+
