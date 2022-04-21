@@ -11,25 +11,29 @@ class HomePresenter: Presenter {
     var showAlert: ((String) -> ())?
     var showError: ((String) -> ())?
     var authorizationGranted: ((Bool) -> ())?
+    var onGetPOIsByTagSuccess: (([Poi]) -> ())?
     
     private var locationService: LocationService
     private var getPOIsUseCase: GetPOIsUseCase
     private var getTagsUseCase: GetTagsUseCase
+    var tagsViewModel: TagsViewModel
     
     var trackingAuthorized = false
-    var didSendPOIRequest = false
+    var didSendFirstRequest = false
     
     var poiArray = [Poi]()
     var tagArray = [Tag]()
     var locationId: String?
     var selectedTag: Tag?
     
-    init(locationService: LocationService, getPOIsUseCase: GetPOIsUseCase, getTagsUseCase: GetTagsUseCase) {
+    init(locationService: LocationService, getPOIsUseCase: GetPOIsUseCase, getTagsUseCase: GetTagsUseCase, tagsViewModel: TagsViewModel) {
         self.locationService = locationService
         self.getPOIsUseCase = getPOIsUseCase
         self.getTagsUseCase = getTagsUseCase
+        self.tagsViewModel = tagsViewModel
         
-        setup()
+        setupServices()
+        setupViewModels()
     }
     
     func startTracking() {
@@ -41,15 +45,15 @@ class HomePresenter: Presenter {
             }
         }
         
-        getPOIArray()
+        loadData()
     }
     
     // MARK: - UseCases
     
-    private func getPOIArray(tag: String? = nil) {
+    private func loadData() {
         if let location = locationService.lastKnownLocation {
             getPOIsUseCase.coordinates = location.asCoordinates()
-            getPOIsUseCase.tag = tag
+            getPOIsUseCase.tag = nil
             getPOIsUseCase.execute { [weak self] result in
                 guard let `self` = self else { return }
                 switch result {
@@ -63,7 +67,24 @@ class HomePresenter: Presenter {
                     self.showError?(error ?? "Failed to get POIs.")
                 }
             }
-            didSendPOIRequest = true
+            didSendFirstRequest = true
+        }
+    }
+    
+    private func getPOIsByTag(_ tag: String) {
+        if let location = locationService.lastKnownLocation {
+            getPOIsUseCase.coordinates = location.asCoordinates()
+            getPOIsUseCase.tag = tag
+            getPOIsUseCase.execute { [weak self] result in
+                guard let `self` = self else { return }
+                switch result {
+                case .success(let pois):
+                    self.onGetPOIsByTagSuccess?(pois)
+                    
+                case .failure(let error):
+                    self.showError?(error ?? "Failed to get POIs.")
+                }
+            }
         }
     }
     
@@ -75,6 +96,7 @@ class HomePresenter: Presenter {
                 switch result {
                 case .success(let tags):
                     self.tagArray = tags
+                    self.tagsViewModel.setup(tags: tags)
                     
                 case .failure(let error):
                     self.showError?(error ?? "Failed to get Tags.")
@@ -82,16 +104,10 @@ class HomePresenter: Presenter {
             }
         }
     }
-    
-    // MARK: - User actions
-    
-    private func tagTapped(at index: Int) {
-        //
-    }
 
     // MARK: - Setup
     
-    private func setup() {
+    private func setupServices() {
         locationService.onAuthorizationGranted = { [weak self] bool in
             self?.trackingAuthorized = bool
             self?.authorizationGranted?(bool)
@@ -99,11 +115,18 @@ class HomePresenter: Presenter {
         locationService.onLocationDidUpdate = { [weak self] coordinates in
             guard let `self` = self else { return }
             if self.trackingAuthorized {
-                if self.poiArray.isEmpty && !self.didSendPOIRequest {
-                    self.getPOIArray()
-                    self.didSendPOIRequest = true
+                if self.poiArray.isEmpty && !self.didSendFirstRequest {
+                    self.loadData()
+                    self.didSendFirstRequest = true
                 }
             }
+        }
+    }
+    
+    private func setupViewModels() {
+        tagsViewModel.tagSelected = { [weak self] tag in
+            guard let `self` = self else { return }
+            self.getPOIsByTag(tag.label)
         }
     }
     

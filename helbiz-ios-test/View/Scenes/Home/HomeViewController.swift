@@ -9,7 +9,8 @@ import UIKit
 
 class HomeViewController: BaseViewController {
 
-    @IBOutlet weak var mapView: MapView!
+    @IBOutlet weak var tagsView: TagsView!
+    @IBOutlet weak var poisView: PoisView!
     
     var style: Style?
     var presenter: HomePresenter?
@@ -17,29 +18,35 @@ class HomeViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setup()
+        setupViews()
+        setupCallbacks()
         
         presenter?.startTracking()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
-        mapView.moveCameraToUser()
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        //
     }
-
-    func setup() {
+    
+    func setupViews() {
+        tagsView.setup(with: presenter?.tagsViewModel)
+    }
+    
+    func setupCallbacks() {
         presenter?.authorizationGranted = { [weak self] bool in
             guard let `self` = self else { return }
-            if bool {
-                self.mapView.moveCameraToUser()
-            } else {
-                self.showAlert(title: "Tracking not allowed",
-                               message: "Please allow sharing device location in Settings to use this app.",
-                               buttonTitle: "Go to Settings", showCancel: true) { action in
-                    UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!)
-                }
+            if bool { return }
+            self.showAlert(title: "Tracking not allowed",
+                           message: "Please allow sharing device location in Settings to use this app.",
+                           buttonTitle: "Go to Settings", showCancel: true) { action in
+                UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!)
             }
+        }
+        
+        presenter?.onGetPOIsByTagSuccess = { [weak self] pois in
+            print("DD:")
+            print(pois)
         }
     }
 }

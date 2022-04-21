@@ -68,6 +68,17 @@
 		04C7297E2810960E00AE15F9 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C7297D2810960E00AE15F9 /* MapView.swift */; };
 		04C729812810967000AE15F9 /* MapView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04C729802810967000AE15F9 /* MapView.xib */; };
 		04C729862810A69800AE15F9 /* map_style.json in Resources */ = {isa = PBXBuildFile; fileRef = 04C729852810A69800AE15F9 /* map_style.json */; };
+		04C729892811661E00AE15F9 /* FoodPlaces.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04C729882811661D00AE15F9 /* FoodPlaces.storyboard */; };
+		04C7298B2811664900AE15F9 /* FoodPlacesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C7298A2811664900AE15F9 /* FoodPlacesViewController.swift */; };
+		04C7298E2811685D00AE15F9 /* TagsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04C7298D2811685D00AE15F9 /* TagsView.xib */; };
+		04C729902811691F00AE15F9 /* PoisView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04C7298F2811691F00AE15F9 /* PoisView.xib */; };
+		04C729922811697200AE15F9 /* TagsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C729912811697200AE15F9 /* TagsView.swift */; };
+		04C72994281169B000AE15F9 /* PoisView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C72993281169B000AE15F9 /* PoisView.swift */; };
+		04C7299628116F2600AE15F9 /* TagsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C7299528116F2600AE15F9 /* TagsViewModel.swift */; };
+		04C72998281176EC00AE15F9 /* PoisViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C72997281176EB00AE15F9 /* PoisViewModel.swift */; };
+		04C7299B2811782E00AE15F9 /* TagCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04C7299A2811782E00AE15F9 /* TagCollectionViewCell.xib */; };
+		04C7299D2811783A00AE15F9 /* TagCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C7299C2811783A00AE15F9 /* TagCollectionViewCell.swift */; };
+		04C7299F28117A0F00AE15F9 /* UICollectionViewCell+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C7299E28117A0F00AE15F9 /* UICollectionViewCell+Extension.swift */; };
 		CE35EB245DE8B024945E5A70 /* Pods_helbiz_ios_test.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A204B392323AAFE59F900B4 /* Pods_helbiz_ios_test.framework */; };
 /* End PBXBuildFile section */
 
@@ -133,6 +144,17 @@
 		04C7297D2810960E00AE15F9 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		04C729802810967000AE15F9 /* MapView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MapView.xib; sourceTree = "<group>"; };
 		04C729852810A69800AE15F9 /* map_style.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = map_style.json; sourceTree = "<group>"; };
+		04C729882811661D00AE15F9 /* FoodPlaces.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FoodPlaces.storyboard; sourceTree = "<group>"; };
+		04C7298A2811664900AE15F9 /* FoodPlacesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodPlacesViewController.swift; sourceTree = "<group>"; };
+		04C7298D2811685D00AE15F9 /* TagsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TagsView.xib; sourceTree = "<group>"; };
+		04C7298F2811691F00AE15F9 /* PoisView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PoisView.xib; sourceTree = "<group>"; };
+		04C729912811697200AE15F9 /* TagsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsView.swift; sourceTree = "<group>"; };
+		04C72993281169B000AE15F9 /* PoisView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoisView.swift; sourceTree = "<group>"; };
+		04C7299528116F2600AE15F9 /* TagsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsViewModel.swift; sourceTree = "<group>"; };
+		04C72997281176EB00AE15F9 /* PoisViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoisViewModel.swift; sourceTree = "<group>"; };
+		04C7299A2811782E00AE15F9 /* TagCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TagCollectionViewCell.xib; sourceTree = "<group>"; };
+		04C7299C2811783A00AE15F9 /* TagCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagCollectionViewCell.swift; sourceTree = "<group>"; };
+		04C7299E28117A0F00AE15F9 /* UICollectionViewCell+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionViewCell+Extension.swift"; sourceTree = "<group>"; };
 		1E81939904E47138FC8989F1 /* Pods-helbiz-ios-test.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-helbiz-ios-test.debug.xcconfig"; path = "Target Support Files/Pods-helbiz-ios-test/Pods-helbiz-ios-test.debug.xcconfig"; sourceTree = "<group>"; };
 		1F58BBF9C7839D359A32F13F /* Pods-helbiz-ios-test.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-helbiz-ios-test.release.xcconfig"; path = "Target Support Files/Pods-helbiz-ios-test/Pods-helbiz-ios-test.release.xcconfig"; sourceTree = "<group>"; };
 		6A204B392323AAFE59F900B4 /* Pods_helbiz_ios_test.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_helbiz_ios_test.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -228,6 +250,7 @@
 				04C728FD280ED4B600AE15F9 /* CALayer+Extension.swift */,
 				04C728FE280ED4B600AE15F9 /* Array+Extension.swift */,
 				04C7297B28103C1500AE15F9 /* CLLocation+Extension.swift */,
+				04C7299E28117A0F00AE15F9 /* UICollectionViewCell+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -248,6 +271,7 @@
 				04C7290F280ED4B700AE15F9 /* AppCoordinator.swift */,
 				04C728DC280ED41600AE15F9 /* LaunchScreen.storyboard */,
 				04C72905280ED4B700AE15F9 /* Home */,
+				04C72987281165B700AE15F9 /* FoodPlaces */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -258,8 +282,8 @@
 				04C728D7280ED41100AE15F9 /* Home.storyboard */,
 				04C72906280ED4B700AE15F9 /* HomeViewController.swift */,
 				04C72907280ED4B700AE15F9 /* HomePresenter.swift */,
-				04C7297F2810961300AE15F9 /* Views */,
-				04C7298228109E0F00AE15F9 /* ViewModels */,
+				04C7298C2811684300AE15F9 /* View */,
+				04C7298228109E0F00AE15F9 /* ViewModel */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -381,20 +405,53 @@
 			path = Tracking;
 			sourceTree = "<group>";
 		};
-		04C7297F2810961300AE15F9 /* Views */ = {
+		04C7297F2810961300AE15F9 /* View */ = {
 			isa = PBXGroup;
 			children = (
 				04C729802810967000AE15F9 /* MapView.xib */,
 				04C7297D2810960E00AE15F9 /* MapView.swift */,
 			);
-			path = Views;
+			path = View;
 			sourceTree = "<group>";
 		};
-		04C7298228109E0F00AE15F9 /* ViewModels */ = {
+		04C7298228109E0F00AE15F9 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				04C7299528116F2600AE15F9 /* TagsViewModel.swift */,
+				04C72997281176EB00AE15F9 /* PoisViewModel.swift */,
 			);
-			path = ViewModels;
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		04C72987281165B700AE15F9 /* FoodPlaces */ = {
+			isa = PBXGroup;
+			children = (
+				04C729882811661D00AE15F9 /* FoodPlaces.storyboard */,
+				04C7298A2811664900AE15F9 /* FoodPlacesViewController.swift */,
+				04C7297F2810961300AE15F9 /* View */,
+			);
+			path = FoodPlaces;
+			sourceTree = "<group>";
+		};
+		04C7298C2811684300AE15F9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				04C729992811781F00AE15F9 /* Cells */,
+				04C7298D2811685D00AE15F9 /* TagsView.xib */,
+				04C729912811697200AE15F9 /* TagsView.swift */,
+				04C7298F2811691F00AE15F9 /* PoisView.xib */,
+				04C72993281169B000AE15F9 /* PoisView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		04C729992811781F00AE15F9 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				04C7299A2811782E00AE15F9 /* TagCollectionViewCell.xib */,
+				04C7299C2811783A00AE15F9 /* TagCollectionViewCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		8386619D0825579216E6FDC8 /* Pods */ = {
@@ -484,8 +541,12 @@
 			files = (
 				04C729862810A69800AE15F9 /* map_style.json in Resources */,
 				04C728DE280ED41600AE15F9 /* LaunchScreen.storyboard in Resources */,
+				04C7298E2811685D00AE15F9 /* TagsView.xib in Resources */,
+				04C729902811691F00AE15F9 /* PoisView.xib in Resources */,
 				04C729812810967000AE15F9 /* MapView.xib in Resources */,
 				04C728DB280ED41600AE15F9 /* Assets.xcassets in Resources */,
+				04C7299B2811782E00AE15F9 /* TagCollectionViewCell.xib in Resources */,
+				04C729892811661E00AE15F9 /* FoodPlaces.storyboard in Resources */,
 				04C728D9280ED41100AE15F9 /* Home.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -543,12 +604,15 @@
 				04C72944280ED4B700AE15F9 /* AppCoordinator.swift in Sources */,
 				04C72926280ED4B700AE15F9 /* UseCase.swift in Sources */,
 				04C72951280ED4B700AE15F9 /* NetworkService.swift in Sources */,
+				04C72994281169B000AE15F9 /* PoisView.swift in Sources */,
+				04C7299F28117A0F00AE15F9 /* UICollectionViewCell+Extension.swift in Sources */,
 				04C7294B280ED4B700AE15F9 /* RequestEndpoint.swift in Sources */,
 				04C7294E280ED4B700AE15F9 /* DataRequestHandler.swift in Sources */,
 				04C7296D28101D2800AE15F9 /* Coordinates.swift in Sources */,
 				04C7297E2810960E00AE15F9 /* MapView.swift in Sources */,
 				04C7297528102CDF00AE15F9 /* TagService.swift in Sources */,
 				04C72928280ED4B700AE15F9 /* AppSession.swift in Sources */,
+				04C7298B2811664900AE15F9 /* FoodPlacesViewController.swift in Sources */,
 				04C7297128101F0700AE15F9 /* Image.swift in Sources */,
 				04C72930280ED4B700AE15F9 /* UIView+Extension.swift in Sources */,
 				04C72968280F5E8700AE15F9 /* LocationService.swift in Sources */,
@@ -566,6 +630,7 @@
 				04C7293B280ED4B700AE15F9 /* Array+Extension.swift in Sources */,
 				04C7294A280ED4B700AE15F9 /* RequestTokens.swift in Sources */,
 				04C72947280ED4B700AE15F9 /* ViewWithNib.swift in Sources */,
+				04C7299628116F2600AE15F9 /* TagsViewModel.swift in Sources */,
 				04C7293F280ED4B700AE15F9 /* HomeViewController.swift in Sources */,
 				04C72927280ED4B700AE15F9 /* DependencyContainer.swift in Sources */,
 				04C7292E280ED4B700AE15F9 /* Collection+Extension.swift in Sources */,
@@ -575,6 +640,7 @@
 				04C72929280ED4B700AE15F9 /* FactoryProtocols.swift in Sources */,
 				04C72942280ED4B700AE15F9 /* MainNavigationController.swift in Sources */,
 				04C7294D280ED4B700AE15F9 /* NetworkRequestResult.swift in Sources */,
+				04C72998281176EC00AE15F9 /* PoisViewModel.swift in Sources */,
 				04C72931280ED4B700AE15F9 /* UIImage+Extension.swift in Sources */,
 				04C7292B280ED4B700AE15F9 /* UIFont+Extension.swift in Sources */,
 				04C72943280ED4B700AE15F9 /* Style.swift in Sources */,
@@ -589,8 +655,10 @@
 				04C72936280ED4B700AE15F9 /* UIViewController+Extension.swift in Sources */,
 				04C72938280ED4B700AE15F9 /* UITableViewCell+Extension.swift in Sources */,
 				04C72932280ED4B700AE15F9 /* UINavigationController+Extension.swift in Sources */,
+				04C729922811697200AE15F9 /* TagsView.swift in Sources */,
 				04C72949280ED4B700AE15F9 /* DefaultNetworkConfiguration.swift in Sources */,
 				04C72934280ED4B700AE15F9 /* Bundle+Extension.swift in Sources */,
+				04C7299D2811783A00AE15F9 /* TagCollectionViewCell.swift in Sources */,
 				04C7297C28103C1500AE15F9 /* CLLocation+Extension.swift in Sources */,
 				04C72948280ED4B700AE15F9 /* Presenter.swift in Sources */,
 			);

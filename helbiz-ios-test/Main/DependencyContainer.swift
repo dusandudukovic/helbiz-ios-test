@@ -93,7 +93,7 @@ extension DependencyContainer: CoordinatorFactory {
 extension DependencyContainer: PresenterFactory {
     func homePresenter() -> HomePresenter {
         return HomePresenter(locationService: locationService,
-                             getPOIsUseCase: getPOIsUseCase(), getTagsUseCase: getTagsUseCase())
+                             getPOIsUseCase: getPOIsUseCase(), getTagsUseCase: getTagsUseCase(), tagsViewModel: TagsViewModel())
     }
 }
 

@@ -9,8 +9,8 @@ import UIKit
 
 struct Style {
     
-    private var mainFontString = "Futura-Medium"
-    private var mainBoldFontString = "Futura-Bold"
+    private var mainFontString = "HelveticaNeue"
+    private var mainBoldFontString = "HelveticaNeue-Bold"
     
     var regularSize: CGFloat = 14
     var mediumSize: CGFloat = 15
