@@ -12,7 +12,8 @@ import Alamofire
 // MARK: - ViewControllers
 
 protocol ViewControllerFactory: AnyObject {
-    func homeViewController() -> BaseViewController 
+    func homeViewController() -> BaseViewController
+    func poiDetailsViewController(poi: Poi) -> BaseViewController
 }
 
 // MARK: - Coordinators

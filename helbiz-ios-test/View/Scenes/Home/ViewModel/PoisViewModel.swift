@@ -11,7 +11,7 @@ import UIKit
 class PoisViewModel: NSObject {
     
     var reloadData: (() -> ())?
-    var poiSelected: ((Poi) -> ())?
+    var onPoiSelected: ((Poi) -> ())?
     var setTitleString: ((String) -> ())?
     
     var pois = [Poi]()
@@ -58,7 +58,7 @@ extension PoisViewModel: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         let poi = pois[indexPath.row]
-        poiSelected?(poi)
+        onPoiSelected?(poi)
     }
     
 }

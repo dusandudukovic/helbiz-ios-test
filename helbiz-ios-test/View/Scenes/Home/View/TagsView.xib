@@ -3,7 +3,6 @@
     <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
-        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -38,7 +37,7 @@
                     <cells/>
                 </collectionView>
             </subviews>
-            <color key="backgroundColor" name="SecondaryLight"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="Ulb-UE-soL" firstAttribute="top" secondItem="HwB-tK-AZA" secondAttribute="bottom" constant="30" id="8JY-dq-THw"/>
                 <constraint firstItem="Ulb-UE-soL" firstAttribute="leading" secondItem="Vhn-uP-zNW" secondAttribute="leading" id="Cbd-o9-GYR"/>
@@ -51,9 +50,4 @@
             <point key="canvasLocation" x="39.130434782608695" y="-254.75543478260872"/>
         </view>
     </objects>
-    <resources>
-        <namedColor name="SecondaryLight">
-            <color red="0.2196078431372549" green="0.25490196078431371" blue="0.30588235294117649" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-    </resources>
 </document>
