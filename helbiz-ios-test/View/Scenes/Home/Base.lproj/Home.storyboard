@@ -26,11 +26,6 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rfm-Wn-nqq" userLabel="PoisView" customClass="PoisView" customModule="helbiz_ios_test" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="294" width="390" height="550"/>
                                 <color key="backgroundColor" name="SecondaryDark"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="30"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
