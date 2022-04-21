@@ -66,7 +66,7 @@
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" name="SecondaryLight"/>
+                        <color key="backgroundColor" name="Background"/>
                         <constraints>
                             <constraint firstItem="qdd-xk-2DX" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="2" id="5SM-aL-Ksl"/>
                             <constraint firstItem="rfm-Wn-nqq" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="centerY" priority="500" id="6Ua-zM-Qwn"/>
@@ -99,11 +99,11 @@
     </scenes>
     <resources>
         <image name="chevron.backward" catalog="system" width="96" height="128"/>
+        <namedColor name="Background">
+            <color red="0.14100000262260437" green="0.18400000035762787" blue="0.24300000071525574" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="SecondaryDark">
             <color red="0.071000002324581146" green="0.090000003576278687" blue="0.12200000137090683" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="SecondaryLight">
-            <color red="0.2199999988079071" green="0.25499999523162842" blue="0.3059999942779541" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

@@ -12,21 +12,22 @@ class MainNaviationController: UINavigationController {
     var style: Style?
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .default
+        return .lightContent
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .backgroundColor
+        view.backgroundColor = style?.backgroundColor
         
         setNavigationBarHidden(true, animated: false)
         
         let appearance = UINavigationBarAppearance()
         appearance.configureWithOpaqueBackground()
-        appearance.backgroundColor = .backgroundColor
+        appearance.backgroundColor = style?.backgroundColor
         appearance.shadowColor = UIColor.clear
         
         navigationBar.standardAppearance = appearance
+        navigationBar.tintColor = .white
         
         if let style = style {
             appearance.titleTextAttributes = [.font: style.mainBoldFont(), NSAttributedString.Key.foregroundColor: UIColor.black]

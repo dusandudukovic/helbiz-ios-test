@@ -12,7 +12,7 @@ class ModalNavigationController: UINavigationController {
     var style: Style?
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .default
+        return .lightContent
     }
     
     override func viewDidLoad() {

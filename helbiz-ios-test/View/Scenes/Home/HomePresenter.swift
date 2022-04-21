@@ -12,6 +12,7 @@ class HomePresenter: Presenter {
     var showError: ((String) -> ())?
     var authorizationGranted: ((Bool) -> ())?
     var onTagSelected: ((Tag) -> ())?
+    var onPoiSelected: ((Poi) -> ())?
     var onGetPOIsByTagSuccess: (([Poi]) -> ())?
     
     private var locationService: LocationService
@@ -140,6 +141,9 @@ class HomePresenter: Presenter {
             guard let `self` = self else { return }
             self.onTagSelected?(tag)
             self.getPOIsByTag(tag)
+        }
+        poisViewModel.onPoiSelected = { [weak self] poi in
+            self?.onPoiSelected?(poi)
         }
     }
     

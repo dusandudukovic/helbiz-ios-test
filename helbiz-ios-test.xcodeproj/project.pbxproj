@@ -83,6 +83,9 @@
 		04C729A72811C72000AE15F9 /* PoisTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C729A62811C72000AE15F9 /* PoisTableViewCell.swift */; };
 		04C729AA2811D7F900AE15F9 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 04C729A92811D7F900AE15F9 /* SDWebImage */; };
 		04C729AC2811EA3400AE15F9 /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C729AB2811EA3300AE15F9 /* MapViewModel.swift */; };
+		04F8FFCA2811F52D0008FF70 /* PoiDetails.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04F8FFC92811F52D0008FF70 /* PoiDetails.storyboard */; };
+		04F8FFCC2811F5410008FF70 /* PoiDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F8FFCB2811F5410008FF70 /* PoiDetailsViewController.swift */; };
+		04F8FFCE2811FA430008FF70 /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F8FFCD2811FA430008FF70 /* HomeCoordinator.swift */; };
 		CE35EB245DE8B024945E5A70 /* Pods_helbiz_ios_test.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A204B392323AAFE59F900B4 /* Pods_helbiz_ios_test.framework */; };
 /* End PBXBuildFile section */
 
@@ -162,6 +165,9 @@
 		04C729A42811C71500AE15F9 /* PoisTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PoisTableViewCell.xib; sourceTree = "<group>"; };
 		04C729A62811C72000AE15F9 /* PoisTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoisTableViewCell.swift; sourceTree = "<group>"; };
 		04C729AB2811EA3300AE15F9 /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
+		04F8FFC92811F52D0008FF70 /* PoiDetails.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PoiDetails.storyboard; sourceTree = "<group>"; };
+		04F8FFCB2811F5410008FF70 /* PoiDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoiDetailsViewController.swift; sourceTree = "<group>"; };
+		04F8FFCD2811FA430008FF70 /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
 		1E81939904E47138FC8989F1 /* Pods-helbiz-ios-test.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-helbiz-ios-test.debug.xcconfig"; path = "Target Support Files/Pods-helbiz-ios-test/Pods-helbiz-ios-test.debug.xcconfig"; sourceTree = "<group>"; };
 		1F58BBF9C7839D359A32F13F /* Pods-helbiz-ios-test.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-helbiz-ios-test.release.xcconfig"; path = "Target Support Files/Pods-helbiz-ios-test/Pods-helbiz-ios-test.release.xcconfig"; sourceTree = "<group>"; };
 		6A204B392323AAFE59F900B4 /* Pods_helbiz_ios_test.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_helbiz_ios_test.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -279,6 +285,7 @@
 				04C7290F280ED4B700AE15F9 /* AppCoordinator.swift */,
 				04C728DC280ED41600AE15F9 /* LaunchScreen.storyboard */,
 				04C72905280ED4B700AE15F9 /* Home */,
+				04F8FFC82811F5120008FF70 /* PoiDetails */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -289,6 +296,7 @@
 				04C728D7280ED41100AE15F9 /* Home.storyboard */,
 				04C72906280ED4B700AE15F9 /* HomeViewController.swift */,
 				04C72907280ED4B700AE15F9 /* HomePresenter.swift */,
+				04F8FFCD2811FA430008FF70 /* HomeCoordinator.swift */,
 				04C7298C2811684300AE15F9 /* View */,
 				04C7298228109E0F00AE15F9 /* ViewModel */,
 			);
@@ -449,6 +457,15 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		04F8FFC82811F5120008FF70 /* PoiDetails */ = {
+			isa = PBXGroup;
+			children = (
+				04F8FFC92811F52D0008FF70 /* PoiDetails.storyboard */,
+				04F8FFCB2811F5410008FF70 /* PoiDetailsViewController.swift */,
+			);
+			path = PoiDetails;
+			sourceTree = "<group>";
+		};
 		8386619D0825579216E6FDC8 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -540,6 +557,7 @@
 				04C728DE280ED41600AE15F9 /* LaunchScreen.storyboard in Resources */,
 				04C7298E2811685D00AE15F9 /* TagsView.xib in Resources */,
 				04C729902811691F00AE15F9 /* PoisView.xib in Resources */,
+				04F8FFCA2811F52D0008FF70 /* PoiDetails.storyboard in Resources */,
 				04C729A52811C71600AE15F9 /* PoisTableViewCell.xib in Resources */,
 				04C729812810967000AE15F9 /* MapView.xib in Resources */,
 				04C728DB280ED41600AE15F9 /* Assets.xcassets in Resources */,
@@ -647,6 +665,7 @@
 				04C7292A280ED4B700AE15F9 /* CLLocationCoordinate2D+Extension.swift in Sources */,
 				04C7297328101FEB00AE15F9 /* LocalHighlights.swift in Sources */,
 				04C7293C280ED4B700AE15F9 /* AppDelegate.swift in Sources */,
+				04F8FFCC2811F5410008FF70 /* PoiDetailsViewController.swift in Sources */,
 				04C7292F280ED4B700AE15F9 /* UIButton+Extension.swift in Sources */,
 				04C72940280ED4B700AE15F9 /* HomePresenter.swift in Sources */,
 				04C72964280F52D900AE15F9 /* GetPOIsUseCase.swift in Sources */,
@@ -661,6 +680,7 @@
 				04C7299D2811783A00AE15F9 /* TagCollectionViewCell.swift in Sources */,
 				04C7297C28103C1500AE15F9 /* CLLocation+Extension.swift in Sources */,
 				04C72948280ED4B700AE15F9 /* Presenter.swift in Sources */,
+				04F8FFCE2811FA430008FF70 /* HomeCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -805,7 +825,7 @@
 			baseConfigurationReference = 1E81939904E47138FC8989F1 /* Pods-helbiz-ios-test.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = Action;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = SGQ52C55M7;
@@ -835,7 +855,7 @@
 			baseConfigurationReference = 1F58BBF9C7839D359A32F13F /* Pods-helbiz-ios-test.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = Action;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = SGQ52C55M7;

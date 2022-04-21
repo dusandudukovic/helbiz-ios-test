@@ -75,7 +75,15 @@ extension DependencyContainer: ViewControllerFactory {
     func homeViewController() -> BaseViewController {
         if let vc = UIStoryboard(name: "Home", bundle: .none).instantiateInitialViewController() as? HomeViewController {
             vc.presenter = homePresenter()
+            vc.coordinator = homeCoordinator()
             vc.style = style
+            return vc
+        }
+        fatalError("Failed to load ViewController from Storyboard")
+    }
+    func poiDetailsViewController(poi: Poi) -> BaseViewController {
+        if let vc = UIStoryboard(name: "PoiDetails", bundle: .none).instantiateInitialViewController() as? PoiDetailsViewController {
+            vc.poi = poi
             return vc
         }
         fatalError("Failed to load ViewController from Storyboard")
@@ -85,7 +93,9 @@ extension DependencyContainer: ViewControllerFactory {
 // MARK: - Coordinator Factory
 
 extension DependencyContainer: CoordinatorFactory {
-    
+    func homeCoordinator() -> HomeCoordinator {
+        return HomeCoordinator(navigationController: navigationController, factory: self)
+    }
 }
 
 // MARK: - Presenter Factory

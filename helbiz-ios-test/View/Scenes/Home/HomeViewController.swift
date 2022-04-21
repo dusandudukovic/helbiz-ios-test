@@ -18,6 +18,7 @@ class HomeViewController: BaseViewController {
     
     var style: Style?
     var presenter: HomePresenter?
+    var coordinator: HomeCoordinator?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +31,8 @@ class HomeViewController: BaseViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        navigationController?.setNavigationBarHidden(true, animated: false)
         
         presenter?.tagsViewModel.resetStates()
         tagsView.collectionView.isUserInteractionEnabled = true
@@ -58,6 +61,8 @@ class HomeViewController: BaseViewController {
     }
     
     func setupViews() {
+        navigationItem.backButtonTitle = ""
+        
         tagsView.setup(with: presenter?.tagsViewModel)
         poisView.setup(with: presenter?.poisViewModel)
         mapView.setup(with: presenter?.mapViewModel)
@@ -68,7 +73,10 @@ class HomeViewController: BaseViewController {
     func setupCallbacks() {
         presenter?.authorizationGranted = { [weak self] bool in
             guard let `self` = self else { return }
-            if bool { return }
+            if bool {
+                self.presenter?.loadData()
+                return
+            }
             self.showAlert(title: "Tracking not allowed",
                            message: "Please allow sharing device location in Settings to use this app.",
                            buttonTitle: "Go to Settings", showCancel: true) { action in
@@ -78,6 +86,10 @@ class HomeViewController: BaseViewController {
         
         presenter?.onTagSelected = { [weak self] tag in
             self?.tagsView.collectionView.isUserInteractionEnabled = false
+        }
+        
+        presenter?.onPoiSelected = { [weak self] poi in
+            self?.coordinator?.navigate(to: .PoiDetails(poi: poi))
         }
         
         presenter?.onGetPOIsByTagSuccess = { [weak self] pois in
