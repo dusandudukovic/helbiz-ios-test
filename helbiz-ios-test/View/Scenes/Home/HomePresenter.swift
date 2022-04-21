@@ -138,6 +138,7 @@ class HomePresenter: Presenter {
     private func setupViewModels() {
         tagsViewModel.tagSelected = { [weak self] tag in
             guard let `self` = self else { return }
+            self.onTagSelected?(tag)
             self.getPOIsByTag(tag)
         }
     }

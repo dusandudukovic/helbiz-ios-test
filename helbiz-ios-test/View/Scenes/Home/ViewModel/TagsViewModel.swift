@@ -15,7 +15,6 @@ class TagsViewModel: NSObject {
     
     var tags = [Tag]()
     var viewModels = [TagCollectionViewCellViewModel]()
-    var selectedIndex: Int?
     
     func setup(tags: [Tag]) {
         viewModels.removeAll()
@@ -55,16 +54,9 @@ extension TagsViewModel: UICollectionViewDelegate, UICollectionViewDataSource {
         if let cell = collectionView.cellForItem(at: indexPath) as? TagCollectionViewCell {
             viewModels[indexPath.row].isSelected = true
             cell.selectCell()
-            
-            if let previouslySelected = selectedIndex {
-                viewModels[previouslySelected].isSelected = false
-                viewModels[previouslySelected].cellResetState?()
-            }
-            selectedIndex = indexPath.row
         }
         
         let tag = tags[indexPath.row]
-        collectionView.isUserInteractionEnabled = false
         tagSelected?(tag)
     }
     

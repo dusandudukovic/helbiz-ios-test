@@ -42,6 +42,7 @@ class HomeViewController: BaseViewController {
     }
     
     @IBAction func backTapped() {
+        presenter?.tagsViewModel.resetStates()
         presenter?.loadData()
         tagsLeadingConstraint.isActive = true
         poisTopConstraint.isActive = true
@@ -76,7 +77,7 @@ class HomeViewController: BaseViewController {
         }
         
         presenter?.onTagSelected = { [weak self] tag in
-            
+            self?.tagsView.collectionView.isUserInteractionEnabled = false
         }
         
         presenter?.onGetPOIsByTagSuccess = { [weak self] pois in
