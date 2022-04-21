@@ -12,7 +12,8 @@ class MapView: ViewWithNib {
     
     @IBOutlet weak var mapView: GMSMapView!
     
-    private var markers: [GMSMarker]?
+    private var markers = [GMSMarker]()
+    private let defaultZoom: Float = 12
     
     // MARK: - Init
     
@@ -30,7 +31,7 @@ class MapView: ViewWithNib {
     
     func moveCameraToUser() {
         if let myLocation = mapView.myLocation {
-            moveCamera(to: myLocation.coordinate, animated: false, zoom: 15)
+            moveCamera(to: myLocation.coordinate, animated: false, zoom: defaultZoom)
         }
     }
     
@@ -55,25 +56,34 @@ class MapView: ViewWithNib {
     
     // MARK: - Marker control
     
-    func showMarkers(_ newMarkers: [GMSMarker]) {
+    func createMarkers(from coordinates: [CLLocationCoordinate2D]) {
         removeMarkers()
-        markers = newMarkers
         
-        for marker in newMarkers {
+        for coordinate in coordinates {
+            let marker = GMSMarker(position: coordinate)
             marker.map = mapView
+            markers.append(marker)
         }
     }
     
     func removeMarkers() {
-        if let markers = markers {
-            for marker in markers {
-                marker.map = nil
-            }
+        for marker in markers {
+            marker.map = nil
         }
-        markers?.removeAll()
+        
+        markers.removeAll()
     }
     
     // MARK: - Configuration
+    
+    func setup(with viewModel: MapViewModel?) {
+        guard let viewModel = viewModel else { return }
+        createMarkers(from: viewModel.coordinates)
+        
+        viewModel.updateMarkers = { [weak self] coordinates in
+            self?.createMarkers(from: coordinates)
+        }
+    }
     
     private func setup() {
         mapView.isMyLocationEnabled = true

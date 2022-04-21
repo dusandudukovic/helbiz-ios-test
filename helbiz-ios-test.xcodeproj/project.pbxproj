@@ -84,6 +84,7 @@
 		04C729A52811C71600AE15F9 /* PoisTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04C729A42811C71500AE15F9 /* PoisTableViewCell.xib */; };
 		04C729A72811C72000AE15F9 /* PoisTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C729A62811C72000AE15F9 /* PoisTableViewCell.swift */; };
 		04C729AA2811D7F900AE15F9 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 04C729A92811D7F900AE15F9 /* SDWebImage */; };
+		04C729AC2811EA3400AE15F9 /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C729AB2811EA3300AE15F9 /* MapViewModel.swift */; };
 		CE35EB245DE8B024945E5A70 /* Pods_helbiz_ios_test.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A204B392323AAFE59F900B4 /* Pods_helbiz_ios_test.framework */; };
 /* End PBXBuildFile section */
 
@@ -164,6 +165,7 @@
 		04C729A22811995B00AE15F9 /* PoisTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoisTableViewCellViewModel.swift; sourceTree = "<group>"; };
 		04C729A42811C71500AE15F9 /* PoisTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PoisTableViewCell.xib; sourceTree = "<group>"; };
 		04C729A62811C72000AE15F9 /* PoisTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoisTableViewCell.swift; sourceTree = "<group>"; };
+		04C729AB2811EA3300AE15F9 /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
 		1E81939904E47138FC8989F1 /* Pods-helbiz-ios-test.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-helbiz-ios-test.debug.xcconfig"; path = "Target Support Files/Pods-helbiz-ios-test/Pods-helbiz-ios-test.debug.xcconfig"; sourceTree = "<group>"; };
 		1F58BBF9C7839D359A32F13F /* Pods-helbiz-ios-test.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-helbiz-ios-test.release.xcconfig"; path = "Target Support Files/Pods-helbiz-ios-test/Pods-helbiz-ios-test.release.xcconfig"; sourceTree = "<group>"; };
 		6A204B392323AAFE59F900B4 /* Pods_helbiz_ios_test.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_helbiz_ios_test.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -429,6 +431,7 @@
 				04C729A02811884100AE15F9 /* TagCollectionViewCellViewModel.swift */,
 				04C72997281176EB00AE15F9 /* PoisViewModel.swift */,
 				04C729A22811995B00AE15F9 /* PoisTableViewCellViewModel.swift */,
+				04C729AB2811EA3300AE15F9 /* MapViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -673,6 +676,7 @@
 				04C72964280F52D900AE15F9 /* GetPOIsUseCase.swift in Sources */,
 				04C72936280ED4B700AE15F9 /* UIViewController+Extension.swift in Sources */,
 				04C72938280ED4B700AE15F9 /* UITableViewCell+Extension.swift in Sources */,
+				04C729AC2811EA3400AE15F9 /* MapViewModel.swift in Sources */,
 				04C72932280ED4B700AE15F9 /* UINavigationController+Extension.swift in Sources */,
 				04C729922811697200AE15F9 /* TagsView.swift in Sources */,
 				04C729A12811884100AE15F9 /* TagCollectionViewCellViewModel.swift in Sources */,

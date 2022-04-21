@@ -19,6 +19,7 @@ class HomePresenter: Presenter {
     private var getTagsUseCase: GetTagsUseCase
     var tagsViewModel: TagsViewModel
     var poisViewModel: PoisViewModel
+    var mapViewModel: MapViewModel
     
     var trackingAuthorized = false
     var didSendFirstRequest = false
@@ -29,12 +30,13 @@ class HomePresenter: Presenter {
     var selectedTag: Tag?
     
     init(locationService: LocationService, getPOIsUseCase: GetPOIsUseCase, getTagsUseCase: GetTagsUseCase,
-         tagsViewModel: TagsViewModel, poisViewModel: PoisViewModel) {
+         tagsViewModel: TagsViewModel, poisViewModel: PoisViewModel, mapViewModel: MapViewModel) {
         self.locationService = locationService
         self.getPOIsUseCase = getPOIsUseCase
         self.getTagsUseCase = getTagsUseCase
         self.tagsViewModel = tagsViewModel
         self.poisViewModel = poisViewModel
+        self.mapViewModel = mapViewModel
         
         setupServices()
         setupViewModels()
@@ -88,6 +90,7 @@ class HomePresenter: Presenter {
                 case .success(let pois):
                     let sorted = pois.sorted { $0.distance < $1.distance }
                     self.poisViewModel.setup(pois: sorted, tagName: tag.name)
+                    self.mapViewModel.setup(pois: pois)
                     self.onGetPOIsByTagSuccess?(sorted)
                     
                 case .failure(let error):

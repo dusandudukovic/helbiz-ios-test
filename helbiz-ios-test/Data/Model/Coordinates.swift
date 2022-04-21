@@ -6,8 +6,15 @@
 //
 
 import Foundation
+import CoreLocation
 
 struct Coordinates: Codable {
     let latitude: Double
     let longitude: Double
+}
+
+extension Coordinates {
+    func toCLLocation2D() -> CLLocationCoordinate2D {
+        return CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+    }
 }

@@ -94,7 +94,7 @@ extension DependencyContainer: PresenterFactory {
     func homePresenter() -> HomePresenter {
         return HomePresenter(locationService: locationService,
                              getPOIsUseCase: getPOIsUseCase(), getTagsUseCase: getTagsUseCase(),
-                             tagsViewModel: TagsViewModel(), poisViewModel: PoisViewModel())
+                             tagsViewModel: TagsViewModel(), poisViewModel: PoisViewModel(), mapViewModel: MapViewModel())
     }
 }
 

@@ -59,6 +59,7 @@ class HomeViewController: BaseViewController {
     func setupViews() {
         tagsView.setup(with: presenter?.tagsViewModel)
         poisView.setup(with: presenter?.poisViewModel)
+        mapView.setup(with: presenter?.mapViewModel)
         
         poisView.setCornerRadius(30, maskedCornes: [.layerMinXMinYCorner, .layerMaxXMinYCorner])
     }
