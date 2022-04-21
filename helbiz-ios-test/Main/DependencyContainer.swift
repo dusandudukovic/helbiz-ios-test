@@ -8,6 +8,7 @@
 import Foundation
 import Alamofire
 import UIKit
+import CoreLocation
 
 class DependencyContainer {
     
@@ -24,7 +25,10 @@ class DependencyContainer {
     }()
     
     private lazy var defaultHeaders: HTTPHeaders = {
-        return HTTPHeaders.default
+        var headers = HTTPHeaders.default
+        headers.add(name: "X-Triposo-Account", value: tokens.triposoAccount)
+        headers.add(name: "X-Triposo-Token", value: tokens.triposoToken)
+        return headers
     }()
     
     private lazy var session: Session = {
@@ -35,21 +39,33 @@ class DependencyContainer {
         return AppSession()
     }()
     
-    private lazy var tokenManager: TokenManager = {
-       return TokenManager(headers: defaultHeaders, appSession: appSession)
-    }()
-    
     lazy var style: Style = {
         return Style()
+    }()
+    
+    lazy var tokens: RequestTokens = {
+        return RequestTokens()
+    }()
+    
+    lazy var locationManager: CLLocationManager = {
+        let lm = CLLocationManager()
+        lm.pausesLocationUpdatesAutomatically = false
+        lm.activityType = .fitness
+        lm.desiredAccuracy = kCLLocationAccuracyBestForNavigation
+        return lm
+    }()
+    
+    lazy var locationService: LocationService = {
+       return LocationService(appSession: appSession, locationManager: locationManager)
+    }()
+    
+    private lazy var tokenManager: TokenManager = {
+       return TokenManager(headers: defaultHeaders, appSession: appSession)
     }()
     
     private lazy var defaultRequestHandler: DataRequestHandler = {
         return DefaultDataRequestHandler()
     }()
-
-//    func makeValidationService() -> ValidationService {
-//        return ValidationService()
-//    }
     
 }
 
@@ -59,6 +75,7 @@ extension DependencyContainer: ViewControllerFactory {
     func homeViewController() -> BaseViewController {
         if let vc = UIStoryboard(name: "Home", bundle: .none).instantiateInitialViewController() as? HomeViewController {
             vc.presenter = homePresenter()
+            vc.style = style
             return vc
         }
         fatalError("Failed to load ViewController from Storyboard")
@@ -75,20 +92,32 @@ extension DependencyContainer: CoordinatorFactory {
 
 extension DependencyContainer: PresenterFactory {
     func homePresenter() -> HomePresenter {
-        return HomePresenter()
+        return HomePresenter(locationService: locationService,
+                             getPOIsUseCase: getPOIsUseCase(), getTagsUseCase: getTagsUseCase(),
+                             tagsViewModel: TagsViewModel(), poisViewModel: PoisViewModel(), mapViewModel: MapViewModel())
     }
 }
 
 // MARK: - UseCase Factory
 
 extension DependencyContainer: UseCaseFactory {
-    
+    func getPOIsUseCase() -> GetPOIsUseCase {
+        return GetPOIsUseCase(service: localHighlightsService())
+    }
+    func getTagsUseCase() -> GetTagsUseCase {
+        return GetTagsUseCase(service: tagService())
+    }
 }
 
 // MARK: - NetworkService Factory
 
 extension DependencyContainer: NetworkServiceFactory {
-    
+    func localHighlightsService() -> LocalHighlightsService {
+        return LocalHighlightsService(headers: defaultHeaders, session: session, dataHandler: defaultRequestHandler)
+    }
+    func tagService() -> TagService {
+        return TagService(headers: defaultHeaders, session: session, dataHandler: defaultRequestHandler)
+    }
 }
 
 // MARK: - Service Factory

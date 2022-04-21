@@ -42,6 +42,12 @@ extension UIView: UIViewLoading {
         }
     }
     
+    func setCornerRadius(_ radius: CGFloat, maskedCornes: CACornerMask) {
+        layer.maskedCorners = maskedCornes
+        layer.cornerRadius = radius
+        clipsToBounds = radius > 0
+    }
+    
     func bounceOnce(duration: CFTimeInterval, scale: CGFloat) {
         layer.bounceOnce(duration: duration, scale: scale)
     }

@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -12,15 +13,97 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="HomeViewController" customModule="helbiz_ios_test" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qdd-xk-2DX" userLabel="Container View">
+                                <rect key="frame" x="0.0" y="0.0" width="780" height="442"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EmQ-gm-P7g" userLabel="TagsView" customClass="TagsView" customModule="helbiz_ios_test" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="44" width="390" height="220"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="220" id="MxY-KQ-rFn"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iOO-jJ-Otr" customClass="MapView" customModule="helbiz_ios_test" customModuleProvider="target">
+                                        <rect key="frame" x="390" y="0.0" width="390" height="442"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dZC-Hh-ivV">
+                                        <rect key="frame" x="410" y="64" width="40" height="40"/>
+                                        <color key="backgroundColor" name="SecondaryLight"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="40" id="FCw-of-NdP"/>
+                                            <constraint firstAttribute="width" secondItem="dZC-Hh-ivV" secondAttribute="height" multiplier="1:1" id="nhz-32-2mE"/>
+                                        </constraints>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="chevron.backward" catalog="system"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="20"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="backTapped" destination="BYZ-38-t0r" eventType="touchUpInside" id="gSJ-5S-sFM"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="dZC-Hh-ivV" secondAttribute="trailing" constant="20" symbolic="YES" id="HaM-0S-Pb1"/>
+                                    <constraint firstAttribute="trailing" secondItem="iOO-jJ-Otr" secondAttribute="trailing" id="WBH-1b-UuX"/>
+                                    <constraint firstItem="EmQ-gm-P7g" firstAttribute="leading" secondItem="qdd-xk-2DX" secondAttribute="leading" id="lst-Cu-2Bb"/>
+                                    <constraint firstAttribute="bottom" secondItem="iOO-jJ-Otr" secondAttribute="bottom" id="n7h-4x-jnT"/>
+                                    <constraint firstItem="iOO-jJ-Otr" firstAttribute="top" secondItem="qdd-xk-2DX" secondAttribute="top" id="rKx-zI-DfM"/>
+                                    <constraint firstItem="dZC-Hh-ivV" firstAttribute="leading" secondItem="iOO-jJ-Otr" secondAttribute="leading" constant="20" id="xGA-2g-Mnl"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rfm-Wn-nqq" userLabel="PoisView" customClass="PoisView" customModule="helbiz_ios_test" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="294" width="390" height="550"/>
+                                <color key="backgroundColor" name="SecondaryDark"/>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" name="SecondaryLight"/>
+                        <constraints>
+                            <constraint firstItem="qdd-xk-2DX" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="2" id="5SM-aL-Ksl"/>
+                            <constraint firstItem="rfm-Wn-nqq" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="centerY" priority="500" id="6Ua-zM-Qwn"/>
+                            <constraint firstItem="EmQ-gm-P7g" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="Bis-Sb-Lmt"/>
+                            <constraint firstAttribute="leading" secondItem="qdd-xk-2DX" secondAttribute="leading" priority="750" id="CVB-Xn-l3I"/>
+                            <constraint firstAttribute="top" secondItem="qdd-xk-2DX" secondAttribute="top" id="DH8-DO-PQE"/>
+                            <constraint firstAttribute="bottom" secondItem="rfm-Wn-nqq" secondAttribute="bottom" id="DIK-HS-80G"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="centerY" secondItem="qdd-xk-2DX" secondAttribute="bottom" constant="-15" id="RG2-MI-gsN"/>
+                            <constraint firstItem="dZC-Hh-ivV" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="aBu-yh-oRL"/>
+                            <constraint firstItem="rfm-Wn-nqq" firstAttribute="top" secondItem="EmQ-gm-P7g" secondAttribute="bottom" priority="750" constant="30" id="b2I-2j-hoB"/>
+                            <constraint firstAttribute="trailing" secondItem="rfm-Wn-nqq" secondAttribute="trailing" id="big-Qw-omN"/>
+                            <constraint firstItem="iOO-jJ-Otr" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="cBi-Yh-g1n"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="top" secondItem="EmQ-gm-P7g" secondAttribute="top" id="sh3-76-6Vw"/>
+                            <constraint firstItem="qdd-xk-2DX" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailing" priority="500" id="xcz-9F-ov6"/>
+                            <constraint firstItem="rfm-Wn-nqq" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="xwH-hk-7Oh"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="mapView" destination="iOO-jJ-Otr" id="548-yk-Ulc"/>
+                        <outlet property="poisTopConstraint" destination="b2I-2j-hoB" id="Lxq-FZ-z7A"/>
+                        <outlet property="poisView" destination="rfm-Wn-nqq" id="LY7-kk-1I9"/>
+                        <outlet property="tagsLeadingConstraint" destination="CVB-Xn-l3I" id="auk-C9-2hV"/>
+                        <outlet property="tagsView" destination="EmQ-gm-P7g" id="NZO-yM-07S"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="62" y="65"/>
+            <point key="canvasLocation" x="60" y="64.691943127962077"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="chevron.backward" catalog="system" width="96" height="128"/>
+        <namedColor name="SecondaryDark">
+            <color red="0.071000002324581146" green="0.090000003576278687" blue="0.12200000137090683" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="SecondaryLight">
+            <color red="0.2199999988079071" green="0.25499999523162842" blue="0.3059999942779541" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>

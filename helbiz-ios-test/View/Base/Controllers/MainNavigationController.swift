@@ -19,6 +19,8 @@ class MainNaviationController: UINavigationController {
         super.viewDidLoad()
         view.backgroundColor = .backgroundColor
         
+        setNavigationBarHidden(true, animated: false)
+        
         let appearance = UINavigationBarAppearance()
         appearance.configureWithOpaqueBackground()
         appearance.backgroundColor = .backgroundColor
