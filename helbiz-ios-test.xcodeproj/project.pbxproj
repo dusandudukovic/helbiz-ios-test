@@ -68,8 +68,6 @@
 		04C7297E2810960E00AE15F9 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C7297D2810960E00AE15F9 /* MapView.swift */; };
 		04C729812810967000AE15F9 /* MapView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04C729802810967000AE15F9 /* MapView.xib */; };
 		04C729862810A69800AE15F9 /* map_style.json in Resources */ = {isa = PBXBuildFile; fileRef = 04C729852810A69800AE15F9 /* map_style.json */; };
-		04C729892811661E00AE15F9 /* FoodPlaces.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04C729882811661D00AE15F9 /* FoodPlaces.storyboard */; };
-		04C7298B2811664900AE15F9 /* FoodPlacesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C7298A2811664900AE15F9 /* FoodPlacesViewController.swift */; };
 		04C7298E2811685D00AE15F9 /* TagsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04C7298D2811685D00AE15F9 /* TagsView.xib */; };
 		04C729902811691F00AE15F9 /* PoisView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04C7298F2811691F00AE15F9 /* PoisView.xib */; };
 		04C729922811697200AE15F9 /* TagsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C729912811697200AE15F9 /* TagsView.swift */; };
@@ -150,8 +148,6 @@
 		04C7297D2810960E00AE15F9 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		04C729802810967000AE15F9 /* MapView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MapView.xib; sourceTree = "<group>"; };
 		04C729852810A69800AE15F9 /* map_style.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = map_style.json; sourceTree = "<group>"; };
-		04C729882811661D00AE15F9 /* FoodPlaces.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FoodPlaces.storyboard; sourceTree = "<group>"; };
-		04C7298A2811664900AE15F9 /* FoodPlacesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodPlacesViewController.swift; sourceTree = "<group>"; };
 		04C7298D2811685D00AE15F9 /* TagsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TagsView.xib; sourceTree = "<group>"; };
 		04C7298F2811691F00AE15F9 /* PoisView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PoisView.xib; sourceTree = "<group>"; };
 		04C729912811697200AE15F9 /* TagsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsView.swift; sourceTree = "<group>"; };
@@ -283,7 +279,6 @@
 				04C7290F280ED4B700AE15F9 /* AppCoordinator.swift */,
 				04C728DC280ED41600AE15F9 /* LaunchScreen.storyboard */,
 				04C72905280ED4B700AE15F9 /* Home */,
-				04C72987281165B700AE15F9 /* FoodPlaces */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -417,13 +412,6 @@
 			path = Tracking;
 			sourceTree = "<group>";
 		};
-		04C7297F2810961300AE15F9 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
 		04C7298228109E0F00AE15F9 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -434,16 +422,6 @@
 				04C729AB2811EA3300AE15F9 /* MapViewModel.swift */,
 			);
 			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		04C72987281165B700AE15F9 /* FoodPlaces */ = {
-			isa = PBXGroup;
-			children = (
-				04C729882811661D00AE15F9 /* FoodPlaces.storyboard */,
-				04C7298A2811664900AE15F9 /* FoodPlacesViewController.swift */,
-				04C7297F2810961300AE15F9 /* View */,
-			);
-			path = FoodPlaces;
 			sourceTree = "<group>";
 		};
 		04C7298C2811684300AE15F9 /* View */ = {
@@ -566,7 +544,6 @@
 				04C729812810967000AE15F9 /* MapView.xib in Resources */,
 				04C728DB280ED41600AE15F9 /* Assets.xcassets in Resources */,
 				04C7299B2811782E00AE15F9 /* TagCollectionViewCell.xib in Resources */,
-				04C729892811661E00AE15F9 /* FoodPlaces.storyboard in Resources */,
 				04C728D9280ED41100AE15F9 /* Home.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -632,7 +609,6 @@
 				04C7297E2810960E00AE15F9 /* MapView.swift in Sources */,
 				04C7297528102CDF00AE15F9 /* TagService.swift in Sources */,
 				04C72928280ED4B700AE15F9 /* AppSession.swift in Sources */,
-				04C7298B2811664900AE15F9 /* FoodPlacesViewController.swift in Sources */,
 				04C7297128101F0700AE15F9 /* Image.swift in Sources */,
 				04C72930280ED4B700AE15F9 /* UIView+Extension.swift in Sources */,
 				04C72968280F5E8700AE15F9 /* LocationService.swift in Sources */,
