@@ -30,9 +30,9 @@
                                         <rect key="frame" x="390" y="0.0" width="390" height="442"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dZC-Hh-ivV">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dZC-Hh-ivV" userLabel="Back">
                                         <rect key="frame" x="410" y="64" width="40" height="40"/>
-                                        <color key="backgroundColor" name="SecondaryLight"/>
+                                        <color key="backgroundColor" name="SecondaryDark"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="40" id="FCw-of-NdP"/>
                                             <constraint firstAttribute="width" secondItem="dZC-Hh-ivV" secondAttribute="height" multiplier="1:1" id="nhz-32-2mE"/>
