@@ -21,7 +21,6 @@ class TagsView: ViewWithNib {
         super.init(coder: aDecoder)
         setup()
     }
-
     
     func setup(with viewModel: TagsViewModel?) {
         guard let viewModel = viewModel else { return }
@@ -36,6 +35,7 @@ class TagsView: ViewWithNib {
     func setup() {
         collectionView.backgroundColor = .clear
         collectionView.backgroundView?.backgroundColor = .clear
+        collectionView.clipsToBounds = false
         collectionView.register(TagCollectionViewCell.nib, forCellWithReuseIdentifier: TagCollectionViewCell.identifier)
     }
     

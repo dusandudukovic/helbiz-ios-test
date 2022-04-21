@@ -55,6 +55,7 @@
                 </userDefinedRuntimeAttribute>
             </userDefinedRuntimeAttributes>
             <connections>
+                <outlet property="iconImage" destination="cpN-tU-8gg" id="MYm-TO-XCf"/>
                 <outlet property="titleLabel" destination="6Hr-P7-uaM" id="TbG-aD-OpS"/>
             </connections>
             <point key="canvasLocation" x="129.59999999999999" y="98.050974512743636"/>

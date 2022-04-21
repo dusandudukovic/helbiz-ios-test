@@ -24,8 +24,13 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rfm-Wn-nqq" userLabel="PoisView" customClass="PoisView" customModule="helbiz_ios_test" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="422" width="390" height="422"/>
+                                <rect key="frame" x="0.0" y="294" width="390" height="550"/>
                                 <color key="backgroundColor" name="SecondaryDark"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="30"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -34,7 +39,7 @@
                             <constraint firstItem="EmQ-gm-P7g" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="05t-om-Jlr"/>
                             <constraint firstItem="EmQ-gm-P7g" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="2Hv-em-qQs"/>
                             <constraint firstAttribute="bottom" secondItem="rfm-Wn-nqq" secondAttribute="bottom" id="DIK-HS-80G"/>
-                            <constraint firstItem="rfm-Wn-nqq" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="VVH-3b-2Nl"/>
+                            <constraint firstItem="rfm-Wn-nqq" firstAttribute="top" secondItem="EmQ-gm-P7g" secondAttribute="bottom" constant="30" id="aum-Zr-hAs"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="rfm-Wn-nqq" secondAttribute="trailing" id="big-Qw-omN"/>
                             <constraint firstItem="EmQ-gm-P7g" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="lAh-Kj-x2A"/>
                             <constraint firstItem="rfm-Wn-nqq" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="xwH-hk-7Oh"/>

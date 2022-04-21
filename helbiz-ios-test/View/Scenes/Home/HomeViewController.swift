@@ -26,7 +26,9 @@ class HomeViewController: BaseViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        //
+        
+        presenter?.tagsViewModel.resetStates()
+        tagsView.collectionView.isUserInteractionEnabled = true
     }
     
     func setupViews() {
