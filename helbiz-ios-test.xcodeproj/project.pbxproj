@@ -83,6 +83,7 @@
 		04C729A32811995B00AE15F9 /* PoisTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C729A22811995B00AE15F9 /* PoisTableViewCellViewModel.swift */; };
 		04C729A52811C71600AE15F9 /* PoisTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04C729A42811C71500AE15F9 /* PoisTableViewCell.xib */; };
 		04C729A72811C72000AE15F9 /* PoisTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C729A62811C72000AE15F9 /* PoisTableViewCell.swift */; };
+		04C729AA2811D7F900AE15F9 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 04C729A92811D7F900AE15F9 /* SDWebImage */; };
 		CE35EB245DE8B024945E5A70 /* Pods_helbiz_ios_test.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A204B392323AAFE59F900B4 /* Pods_helbiz_ios_test.framework */; };
 /* End PBXBuildFile section */
 
@@ -175,6 +176,7 @@
 			files = (
 				04C72955280ED5BE00AE15F9 /* Alamofire in Frameworks */,
 				04C72958280ED62100AE15F9 /* AlamofireNetworkActivityLogger in Frameworks */,
+				04C729AA2811D7F900AE15F9 /* SDWebImage in Frameworks */,
 				CE35EB245DE8B024945E5A70 /* Pods_helbiz_ios_test.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -504,6 +506,7 @@
 			packageProductDependencies = (
 				04C72954280ED5BE00AE15F9 /* Alamofire */,
 				04C72957280ED62100AE15F9 /* AlamofireNetworkActivityLogger */,
+				04C729A92811D7F900AE15F9 /* SDWebImage */,
 			);
 			productName = "helbiz-ios-test";
 			productReference = 04C728CE280ED41100AE15F9 /* helbiz-ios-test.app */;
@@ -536,6 +539,7 @@
 			packageReferences = (
 				04C72953280ED5BE00AE15F9 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				04C72956280ED62100AE15F9 /* XCRemoteSwiftPackageReference "AlamofireNetworkActivityLogger" */,
+				04C729A82811D7F900AE15F9 /* XCRemoteSwiftPackageReference "SDWebImage" */,
 			);
 			productRefGroup = 04C728CF280ED41100AE15F9 /* Products */;
 			projectDirPath = "";
@@ -916,6 +920,14 @@
 				minimumVersion = 3.4.0;
 			};
 		};
+		04C729A82811D7F900AE15F9 /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -928,6 +940,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 04C72956280ED62100AE15F9 /* XCRemoteSwiftPackageReference "AlamofireNetworkActivityLogger" */;
 			productName = AlamofireNetworkActivityLogger;
+		};
+		04C729A92811D7F900AE15F9 /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 04C729A82811D7F900AE15F9 /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

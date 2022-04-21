@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import SDWebImage
 
 class PoisTableViewCell: UITableViewCell {
     
@@ -21,6 +22,11 @@ class PoisTableViewCell: UITableViewCell {
         subtitleLabel.text = viewModel.subtitleString
         ratingLabel.text = viewModel.ratingString
         distanceLabel.text = viewModel.distanceString
+        
+        if let url = viewModel.thumbnailImageUrl {
+            thumbnailImageView.sd_setImage(with: URL(string: url), placeholderImage: UIImage(named: "icon-image"))
+        }
+        
     }
     
 }

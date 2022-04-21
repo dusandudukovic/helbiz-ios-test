@@ -61,9 +61,11 @@ class HomePresenter: Presenter {
                 guard let `self` = self else { return }
                 switch result {
                 case .success(let pois):
-                    self.poiArray = pois
-                    self.locationId = pois.first?.locationID
-                    self.poisViewModel.setup(pois: pois)
+                    let sorted = pois.sorted { $0.distance < $1.distance }
+                    
+                    self.poiArray = sorted
+                    self.locationId = sorted.first?.locationID
+                    self.poisViewModel.setup(pois: sorted)
                     
                     self.getTagArray()
                     
@@ -83,8 +85,9 @@ class HomePresenter: Presenter {
                 guard let `self` = self else { return }
                 switch result {
                 case .success(let pois):
-                    self.poisViewModel.setup(pois: pois)
-                    self.onGetPOIsByTagSuccess?(pois)
+                    let sorted = pois.sorted { $0.distance < $1.distance }
+                    self.poisViewModel.setup(pois: sorted)
+                    self.onGetPOIsByTagSuccess?(sorted)
                     
                 case .failure(let error):
                     self.showError?(error ?? "Failed to get POIs.")
