@@ -31,13 +31,13 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" name="SecondaryLight"/>
                         <constraints>
-                            <constraint firstItem="EmQ-gm-P7g" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="05t-om-Jlr"/>
-                            <constraint firstItem="EmQ-gm-P7g" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="2Hv-em-qQs"/>
+                            <constraint firstItem="EmQ-gm-P7g" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="05t-om-Jlr"/>
+                            <constraint firstItem="EmQ-gm-P7g" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailing" id="2Hv-em-qQs"/>
                             <constraint firstAttribute="bottom" secondItem="rfm-Wn-nqq" secondAttribute="bottom" id="DIK-HS-80G"/>
                             <constraint firstItem="rfm-Wn-nqq" firstAttribute="top" secondItem="EmQ-gm-P7g" secondAttribute="bottom" constant="30" id="aum-Zr-hAs"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="rfm-Wn-nqq" secondAttribute="trailing" id="big-Qw-omN"/>
+                            <constraint firstAttribute="trailing" secondItem="rfm-Wn-nqq" secondAttribute="trailing" id="big-Qw-omN"/>
                             <constraint firstItem="EmQ-gm-P7g" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="lAh-Kj-x2A"/>
-                            <constraint firstItem="rfm-Wn-nqq" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="xwH-hk-7Oh"/>
+                            <constraint firstItem="rfm-Wn-nqq" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="xwH-hk-7Oh"/>
                         </constraints>
                     </view>
                     <connections>

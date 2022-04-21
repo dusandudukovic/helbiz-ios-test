@@ -9,6 +9,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PoisView" customModule="helbiz_ios_test" customModuleProvider="target">
             <connections>
+                <outlet property="subtitleLabel" destination="lQp-F4-vTQ" id="MGY-ud-cze"/>
                 <outlet property="tableView" destination="jLM-rh-sAT" id="yvc-1S-XvJ"/>
                 <outlet property="titleLabel" destination="FFh-rX-ZxJ" id="K2d-N0-1Qp"/>
             </connections>
@@ -29,12 +30,20 @@
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </tableView>
+                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No restaurants nearby" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lQp-F4-vTQ">
+                    <rect key="frame" x="119" y="84.5" width="137.5" height="16.5"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Italic" family="Helvetica Neue" pointSize="14"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" name="SecondaryDark"/>
             <constraints>
                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="FFh-rX-ZxJ" secondAttribute="trailing" constant="20" id="Smg-9a-vx8"/>
                 <constraint firstAttribute="trailing" secondItem="jLM-rh-sAT" secondAttribute="trailing" id="Wxw-9e-uWf"/>
+                <constraint firstItem="lQp-F4-vTQ" firstAttribute="top" secondItem="jLM-rh-sAT" secondAttribute="top" constant="25" id="YKS-d7-tmM"/>
                 <constraint firstAttribute="bottom" secondItem="jLM-rh-sAT" secondAttribute="bottom" id="ehh-jV-4Le"/>
+                <constraint firstItem="lQp-F4-vTQ" firstAttribute="centerX" secondItem="EJD-9N-ekq" secondAttribute="centerX" id="g8J-Qs-SBi"/>
                 <constraint firstItem="FFh-rX-ZxJ" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="EJD-9N-ekq" secondAttribute="leading" constant="20" id="gju-Zs-VHu"/>
                 <constraint firstItem="jLM-rh-sAT" firstAttribute="top" secondItem="FFh-rX-ZxJ" secondAttribute="bottom" constant="20" id="iPs-of-z75"/>
                 <constraint firstItem="FFh-rX-ZxJ" firstAttribute="top" secondItem="EJD-9N-ekq" secondAttribute="top" constant="20" id="n9r-eE-Sg8"/>
@@ -47,10 +56,10 @@
     </objects>
     <resources>
         <namedColor name="Action">
-            <color red="0.96491988660000005" green="0.7202678938" blue="0.32466313629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.9649999737739563" green="0.72000002861022949" blue="0.32499998807907104" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="SecondaryDark">
-            <color red="0.070588235289999995" green="0.090196078430000007" blue="0.1215686275" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.071000002324581146" green="0.090000003576278687" blue="0.12200000137090683" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

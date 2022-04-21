@@ -33,6 +33,8 @@ class HomeViewController: BaseViewController {
     
     func setupViews() {
         tagsView.setup(with: presenter?.tagsViewModel)
+        poisView.setup(with: presenter?.poisViewModel)
+        
         poisView.setCornerRadius(30, maskedCornes: [.layerMinXMinYCorner, .layerMaxXMinYCorner])
     }
     
@@ -48,8 +50,7 @@ class HomeViewController: BaseViewController {
         }
         
         presenter?.onGetPOIsByTagSuccess = { [weak self] pois in
-            print("DD:")
-            print(pois)
+            print("DD: POIs by tag loaded")
         }
     }
 }

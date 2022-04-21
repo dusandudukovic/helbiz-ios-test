@@ -14,14 +14,15 @@ class TagsViewModel: NSObject {
     var tagSelected: ((Tag) -> ())?
     
     var tags = [Tag]()
-    var viewModels = [TagCollectionCellViewModel]()
+    var viewModels = [TagCollectionViewCellViewModel]()
+    var selectedIndex: Int?
     
     func setup(tags: [Tag]) {
         viewModels.removeAll()
         self.tags = tags
         
         for tag in tags {
-            viewModels.append(TagCollectionCellViewModel(tag: tag))
+            viewModels.append(TagCollectionViewCellViewModel(tag: tag))
         }
         
         reloadData?()
@@ -54,6 +55,12 @@ extension TagsViewModel: UICollectionViewDelegate, UICollectionViewDataSource {
         if let cell = collectionView.cellForItem(at: indexPath) as? TagCollectionViewCell {
             viewModels[indexPath.row].isSelected = true
             cell.selectCell()
+            
+            if let previouslySelected = selectedIndex {
+                viewModels[previouslySelected].isSelected = false
+                viewModels[previouslySelected].cellResetState?()
+            }
+            selectedIndex = indexPath.row
         }
         
         let tag = tags[indexPath.row]

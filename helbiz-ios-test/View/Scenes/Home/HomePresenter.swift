@@ -17,6 +17,7 @@ class HomePresenter: Presenter {
     private var getPOIsUseCase: GetPOIsUseCase
     private var getTagsUseCase: GetTagsUseCase
     var tagsViewModel: TagsViewModel
+    var poisViewModel: PoisViewModel
     
     var trackingAuthorized = false
     var didSendFirstRequest = false
@@ -26,11 +27,13 @@ class HomePresenter: Presenter {
     var locationId: String?
     var selectedTag: Tag?
     
-    init(locationService: LocationService, getPOIsUseCase: GetPOIsUseCase, getTagsUseCase: GetTagsUseCase, tagsViewModel: TagsViewModel) {
+    init(locationService: LocationService, getPOIsUseCase: GetPOIsUseCase, getTagsUseCase: GetTagsUseCase,
+         tagsViewModel: TagsViewModel, poisViewModel: PoisViewModel) {
         self.locationService = locationService
         self.getPOIsUseCase = getPOIsUseCase
         self.getTagsUseCase = getTagsUseCase
         self.tagsViewModel = tagsViewModel
+        self.poisViewModel = poisViewModel
         
         setupServices()
         setupViewModels()
@@ -60,6 +63,7 @@ class HomePresenter: Presenter {
                 case .success(let pois):
                     self.poiArray = pois
                     self.locationId = pois.first?.locationID
+                    self.poisViewModel.setup(pois: pois)
                     
                     self.getTagArray()
                     
@@ -79,6 +83,7 @@ class HomePresenter: Presenter {
                 guard let `self` = self else { return }
                 switch result {
                 case .success(let pois):
+                    self.poisViewModel.setup(pois: pois)
                     self.onGetPOIsByTagSuccess?(pois)
                     
                 case .failure(let error):

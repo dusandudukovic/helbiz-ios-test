@@ -19,8 +19,8 @@ class TagCollectionViewCell: UICollectionViewCell {
         resetState()
     }
     
-    func setup(with viewModel: TagCollectionCellViewModel) {
-        titleLabel.text = viewModel.titleLabelText
+    func setup(with viewModel: TagCollectionViewCellViewModel) {
+        titleLabel.text = viewModel.titleString
         if viewModel.isSelected {
             selectCell()
         }

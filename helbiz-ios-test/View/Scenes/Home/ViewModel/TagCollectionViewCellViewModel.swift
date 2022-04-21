@@ -1,5 +1,5 @@
 //
-//  TagCollectionCellViewModel.swift
+//  TagCollectionViewCellViewModel.swift
 //  helbiz-ios-test
 //
 //  Created by Dusan on 21.4.22..
@@ -7,15 +7,15 @@
 
 import Foundation
 
-class TagCollectionCellViewModel {
+class TagCollectionViewCellViewModel {
     
     var cellResetState: (() -> ())?
     
-    var titleLabelText: String
+    var titleString: String
     var isSelected = false
     
     init(tag: Tag) {
-        titleLabelText = tag.name
+        titleString = tag.name
     }
     
 }
