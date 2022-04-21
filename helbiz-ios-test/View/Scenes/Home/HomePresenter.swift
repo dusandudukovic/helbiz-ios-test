@@ -11,6 +11,7 @@ class HomePresenter: Presenter {
     var showAlert: ((String) -> ())?
     var showError: ((String) -> ())?
     var authorizationGranted: ((Bool) -> ())?
+    var onTagSelected: ((Tag) -> ())?
     var onGetPOIsByTagSuccess: (([Poi]) -> ())?
     
     private var locationService: LocationService
@@ -53,7 +54,7 @@ class HomePresenter: Presenter {
     
     // MARK: - UseCases
     
-    private func loadData() {
+    func loadData() {
         if let location = locationService.lastKnownLocation {
             getPOIsUseCase.coordinates = location.asCoordinates()
             getPOIsUseCase.tag = nil
@@ -77,16 +78,16 @@ class HomePresenter: Presenter {
         }
     }
     
-    private func getPOIsByTag(_ tag: String) {
+    private func getPOIsByTag(_ tag: Tag) {
         if let location = locationService.lastKnownLocation {
             getPOIsUseCase.coordinates = location.asCoordinates()
-            getPOIsUseCase.tag = tag
+            getPOIsUseCase.tag = tag.label
             getPOIsUseCase.execute { [weak self] result in
                 guard let `self` = self else { return }
                 switch result {
                 case .success(let pois):
                     let sorted = pois.sorted { $0.distance < $1.distance }
-                    self.poisViewModel.setup(pois: sorted)
+                    self.poisViewModel.setup(pois: sorted, tagName: tag.name)
                     self.onGetPOIsByTagSuccess?(sorted)
                     
                 case .failure(let error):
@@ -134,7 +135,7 @@ class HomePresenter: Presenter {
     private func setupViewModels() {
         tagsViewModel.tagSelected = { [weak self] tag in
             guard let `self` = self else { return }
-            self.getPOIsByTag(tag.label)
+            self.getPOIsByTag(tag)
         }
     }
     

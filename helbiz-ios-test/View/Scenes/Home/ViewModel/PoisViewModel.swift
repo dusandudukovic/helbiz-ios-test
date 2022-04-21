@@ -12,17 +12,26 @@ class PoisViewModel: NSObject {
     
     var reloadData: (() -> ())?
     var poiSelected: ((Poi) -> ())?
+    var setTitleString: ((String) -> ())?
     
     var pois = [Poi]()
     var viewModels = [PoisTableViewCellViewModel]()
+    var titleString: String? {
+        didSet {
+            setTitleString?(titleString ?? defaultTitleString)
+        }
+    }
     
-    func setup(pois: [Poi]) {
+    private let defaultTitleString = "All restaurants"
+    
+    func setup(pois: [Poi], tagName: String? = nil) {
         self.pois = pois
         viewModels.removeAll()
         for poi in pois {
             viewModels.append(PoisTableViewCellViewModel(poi: poi))
         }
         
+        titleString = tagName ?? defaultTitleString
         reloadData?()
     }
 

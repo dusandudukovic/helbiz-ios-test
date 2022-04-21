@@ -418,8 +418,6 @@
 		04C7297F2810961300AE15F9 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				04C729802810967000AE15F9 /* MapView.xib */,
-				04C7297D2810960E00AE15F9 /* MapView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -449,6 +447,8 @@
 			isa = PBXGroup;
 			children = (
 				04C729992811781F00AE15F9 /* Cells */,
+				04C729802810967000AE15F9 /* MapView.xib */,
+				04C7297D2810960E00AE15F9 /* MapView.swift */,
 				04C7298D2811685D00AE15F9 /* TagsView.xib */,
 				04C729912811697200AE15F9 /* TagsView.swift */,
 				04C7298F2811691F00AE15F9 /* PoisView.xib */,

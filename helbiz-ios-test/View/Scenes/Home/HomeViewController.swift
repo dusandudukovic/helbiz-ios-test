@@ -11,6 +11,10 @@ class HomeViewController: BaseViewController {
 
     @IBOutlet weak var tagsView: TagsView!
     @IBOutlet weak var poisView: PoisView!
+    @IBOutlet weak var mapView: MapView!
+    
+    @IBOutlet var tagsLeadingConstraint: NSLayoutConstraint!
+    @IBOutlet var poisTopConstraint: NSLayoutConstraint!
     
     var style: Style?
     var presenter: HomePresenter?
@@ -31,6 +35,27 @@ class HomeViewController: BaseViewController {
         tagsView.collectionView.isUserInteractionEnabled = true
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        mapView.moveCameraToUser()
+    }
+    
+    @IBAction func backTapped() {
+        presenter?.loadData()
+        tagsLeadingConstraint.isActive = true
+        poisTopConstraint.isActive = true
+        tagsView.collectionView.isUserInteractionEnabled = true
+        
+        UIView.animate(withDuration: 0.2, delay: 0, options: []) {
+            self.view.layoutIfNeeded()
+        } completion: { bool in
+            if bool {
+                self.mapView.isHidden = true
+            }
+        }
+    }
+    
     func setupViews() {
         tagsView.setup(with: presenter?.tagsViewModel)
         poisView.setup(with: presenter?.poisViewModel)
@@ -49,8 +74,18 @@ class HomeViewController: BaseViewController {
             }
         }
         
+        presenter?.onTagSelected = { [weak self] tag in
+            
+        }
+        
         presenter?.onGetPOIsByTagSuccess = { [weak self] pois in
-            print("DD: POIs by tag loaded")
+            self?.tagsLeadingConstraint.isActive = false
+            self?.poisTopConstraint.isActive = false
+            self?.mapView.isHidden = false
+            
+            UIView.animate(withDuration: 0.2, animations: {
+                self?.view.layoutIfNeeded()
+            })
         }
     }
 }

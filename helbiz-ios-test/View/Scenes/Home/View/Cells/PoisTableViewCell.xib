@@ -40,9 +40,9 @@
                             </label>
                         </subviews>
                     </stackView>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow.right" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="umQ-Gy-MHY">
-                        <rect key="frame" x="340" y="45.5" width="20" height="15"/>
-                        <color key="tintColor" red="0.96491988660000005" green="0.7202678938" blue="0.32466313629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chevron.right" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="umQ-Gy-MHY">
+                        <rect key="frame" x="340" y="45" width="20" height="16.5"/>
+                        <color key="tintColor" name="Action"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="umQ-Gy-MHY" secondAttribute="height" multiplier="1:1" id="Sl0-aB-7VM"/>
                             <constraint firstAttribute="width" constant="20" id="Uu1-Qf-SM3"/>
@@ -90,7 +90,7 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="arrow.right" catalog="system" width="128" height="98"/>
+        <image name="chevron.right" catalog="system" width="96" height="128"/>
         <image name="icon-image" width="12" height="12"/>
         <namedColor name="Action">
             <color red="0.9649999737739563" green="0.72000002861022949" blue="0.32499998807907104" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

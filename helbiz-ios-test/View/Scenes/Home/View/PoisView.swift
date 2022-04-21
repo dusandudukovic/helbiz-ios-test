@@ -33,12 +33,17 @@ class PoisView: ViewWithNib {
         tableView.delegate = viewModel
         tableView.dataSource = viewModel
         
+        titleLabel.text = viewModel.titleString
         subtitleLabel.isHidden = !viewModel.pois.isEmpty
         
         viewModel.reloadData = { [weak self] in
             self?.tableView.reloadData()
             self?.subtitleLabel.isHidden = !viewModel.pois.isEmpty
         }
+        viewModel.setTitleString = { [weak self] title in
+            self?.titleLabel.text = title
+        }
+        
     }
     
     func setup() {
